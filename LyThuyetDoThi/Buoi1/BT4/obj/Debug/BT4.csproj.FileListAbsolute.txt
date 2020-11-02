@@ -1,0 +1,7 @@
+E:\CodeConsole\LyThuyetDoThi\Buoi1\BT4\bin\Debug\BT4.exe.config
+E:\CodeConsole\LyThuyetDoThi\Buoi1\BT4\bin\Debug\BT4.exe
+E:\CodeConsole\LyThuyetDoThi\Buoi1\BT4\bin\Debug\BT4.pdb
+E:\CodeConsole\LyThuyetDoThi\Buoi1\BT4\obj\Debug\BT4.csprojAssemblyReference.cache
+E:\CodeConsole\LyThuyetDoThi\Buoi1\BT4\obj\Debug\BT4.csproj.CoreCompileInputs.cache
+E:\CodeConsole\LyThuyetDoThi\Buoi1\BT4\obj\Debug\BT4.exe
+E:\CodeConsole\LyThuyetDoThi\Buoi1\BT4\obj\Debug\BT4.pdb

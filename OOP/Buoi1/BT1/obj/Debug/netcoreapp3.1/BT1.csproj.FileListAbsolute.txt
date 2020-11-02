@@ -1,0 +1,13 @@
+E:\CodeConsole\OOP\Buoi1\BT1\bin\Debug\netcoreapp3.1\BT1.exe
+E:\CodeConsole\OOP\Buoi1\BT1\bin\Debug\netcoreapp3.1\BT1.deps.json
+E:\CodeConsole\OOP\Buoi1\BT1\bin\Debug\netcoreapp3.1\BT1.runtimeconfig.json
+E:\CodeConsole\OOP\Buoi1\BT1\bin\Debug\netcoreapp3.1\BT1.runtimeconfig.dev.json
+E:\CodeConsole\OOP\Buoi1\BT1\bin\Debug\netcoreapp3.1\BT1.dll
+E:\CodeConsole\OOP\Buoi1\BT1\bin\Debug\netcoreapp3.1\BT1.pdb
+E:\CodeConsole\OOP\Buoi1\BT1\obj\Debug\netcoreapp3.1\BT1.csprojAssemblyReference.cache
+E:\CodeConsole\OOP\Buoi1\BT1\obj\Debug\netcoreapp3.1\BT1.csproj.CoreCompileInputs.cache
+E:\CodeConsole\OOP\Buoi1\BT1\obj\Debug\netcoreapp3.1\BT1.AssemblyInfoInputs.cache
+E:\CodeConsole\OOP\Buoi1\BT1\obj\Debug\netcoreapp3.1\BT1.AssemblyInfo.cs
+E:\CodeConsole\OOP\Buoi1\BT1\obj\Debug\netcoreapp3.1\BT1.dll
+E:\CodeConsole\OOP\Buoi1\BT1\obj\Debug\netcoreapp3.1\BT1.pdb
+E:\CodeConsole\OOP\Buoi1\BT1\obj\Debug\netcoreapp3.1\BT1.genruntimeconfig.cache

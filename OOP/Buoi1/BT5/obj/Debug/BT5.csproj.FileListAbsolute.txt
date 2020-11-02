@@ -1,0 +1,6 @@
+E:\CodeConsole\OOP\Buoi1\BT5\bin\Debug\BT5.exe.config
+E:\CodeConsole\OOP\Buoi1\BT5\bin\Debug\BT5.exe
+E:\CodeConsole\OOP\Buoi1\BT5\bin\Debug\BT5.pdb
+E:\CodeConsole\OOP\Buoi1\BT5\obj\Debug\BT5.csproj.CoreCompileInputs.cache
+E:\CodeConsole\OOP\Buoi1\BT5\obj\Debug\BT5.exe
+E:\CodeConsole\OOP\Buoi1\BT5\obj\Debug\BT5.pdb

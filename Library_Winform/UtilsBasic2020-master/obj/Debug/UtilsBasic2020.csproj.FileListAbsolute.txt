@@ -1,0 +1,6 @@
+D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\bin\Debug\UtilsBasic2020.dll
+D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\bin\Debug\UtilsBasic2020.pdb
+D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\obj\Debug\UtilsBasic2020.csprojAssemblyReference.cache
+D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\obj\Debug\UtilsBasic2020.csproj.CoreCompileInputs.cache
+D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\obj\Debug\UtilsBasic2020.dll
+D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\obj\Debug\UtilsBasic2020.pdb

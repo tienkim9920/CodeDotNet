@@ -1,0 +1,7 @@
+E:\CodeConsole\OOP\Buoi2\BT6\bin\Debug\BT6.exe.config
+E:\CodeConsole\OOP\Buoi2\BT6\bin\Debug\BT6.exe
+E:\CodeConsole\OOP\Buoi2\BT6\bin\Debug\BT6.pdb
+E:\CodeConsole\OOP\Buoi2\BT6\obj\Debug\BT6.csprojAssemblyReference.cache
+E:\CodeConsole\OOP\Buoi2\BT6\obj\Debug\BT6.csproj.CoreCompileInputs.cache
+E:\CodeConsole\OOP\Buoi2\BT6\obj\Debug\BT6.exe
+E:\CodeConsole\OOP\Buoi2\BT6\obj\Debug\BT6.pdb

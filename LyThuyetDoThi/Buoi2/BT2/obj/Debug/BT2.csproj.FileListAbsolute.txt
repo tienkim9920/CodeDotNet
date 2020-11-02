@@ -1,0 +1,7 @@
+E:\CodeConsole\LyThuyetDoThi\Buoi2\BT2\bin\Debug\BT2.exe.config
+E:\CodeConsole\LyThuyetDoThi\Buoi2\BT2\bin\Debug\BT2.exe
+E:\CodeConsole\LyThuyetDoThi\Buoi2\BT2\bin\Debug\BT2.pdb
+E:\CodeConsole\LyThuyetDoThi\Buoi2\BT2\obj\Debug\BT2.csproj.CoreCompileInputs.cache
+E:\CodeConsole\LyThuyetDoThi\Buoi2\BT2\obj\Debug\BT2.exe
+E:\CodeConsole\LyThuyetDoThi\Buoi2\BT2\obj\Debug\BT2.pdb
+E:\CodeConsole\LyThuyetDoThi\Buoi2\BT2\obj\Debug\BT2.csprojAssemblyReference.cache

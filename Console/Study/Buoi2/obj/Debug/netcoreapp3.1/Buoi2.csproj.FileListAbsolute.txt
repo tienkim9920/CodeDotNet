@@ -1,0 +1,13 @@
+E:\CodeStoreC#\Console\Study\Buoi2\bin\Debug\netcoreapp3.1\Buoi2.exe
+E:\CodeStoreC#\Console\Study\Buoi2\bin\Debug\netcoreapp3.1\Buoi2.deps.json
+E:\CodeStoreC#\Console\Study\Buoi2\bin\Debug\netcoreapp3.1\Buoi2.runtimeconfig.json
+E:\CodeStoreC#\Console\Study\Buoi2\bin\Debug\netcoreapp3.1\Buoi2.runtimeconfig.dev.json
+E:\CodeStoreC#\Console\Study\Buoi2\bin\Debug\netcoreapp3.1\Buoi2.dll
+E:\CodeStoreC#\Console\Study\Buoi2\bin\Debug\netcoreapp3.1\Buoi2.pdb
+E:\CodeStoreC#\Console\Study\Buoi2\obj\Debug\netcoreapp3.1\Buoi2.csprojAssemblyReference.cache
+E:\CodeStoreC#\Console\Study\Buoi2\obj\Debug\netcoreapp3.1\Buoi2.csproj.CoreCompileInputs.cache
+E:\CodeStoreC#\Console\Study\Buoi2\obj\Debug\netcoreapp3.1\Buoi2.AssemblyInfoInputs.cache
+E:\CodeStoreC#\Console\Study\Buoi2\obj\Debug\netcoreapp3.1\Buoi2.AssemblyInfo.cs
+E:\CodeStoreC#\Console\Study\Buoi2\obj\Debug\netcoreapp3.1\Buoi2.dll
+E:\CodeStoreC#\Console\Study\Buoi2\obj\Debug\netcoreapp3.1\Buoi2.pdb
+E:\CodeStoreC#\Console\Study\Buoi2\obj\Debug\netcoreapp3.1\Buoi2.genruntimeconfig.cache
