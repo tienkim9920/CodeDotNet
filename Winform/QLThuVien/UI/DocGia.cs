@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Controller;
 using UtilsBasic2020;
 
 namespace UI
 {
     public partial class DocGia : Form
     {
-
+        //Controller
+        ControllerDocGia controller = new ControllerDocGia();
 
         public DocGia()
         {
@@ -51,9 +53,18 @@ namespace UI
 
         private void DocGia_Load(object sender, EventArgs e)
         {
+            controller.GetAllDocGia(dataDocGia);
+        }
+
+        private void dataDocGia_Click(object sender, EventArgs e)
+        {
             try
             {
-                MSS.crud.LoadDataGridViewDataSet("Account", dgvAccount);
+                Control[] controls = { txtMaDG, txtMaLoaiDG, txtHoten, txtNgaySinh, txtDiaChi,
+                    txtEmail, txtSoSachMuon, txtNgayLapThe, txtTinhTrang };
+                string[] fielsName = { "MaDG", "MaLoaiDG","HoTen", "NgaySinh",
+                        "DiaChi", "Email", "SoSachMuon", "NgayLapThe", "TinhTrangTraTre" };
+                MSS.crud.BindingsFields(dataDocGia, controls, fielsName);
             }
             catch (Exception ex)
             {
@@ -62,19 +73,20 @@ namespace UI
             }
         }
 
-        private void dgvAccount_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            if (controller.Update(dataDocGia, txtMaDG.Text, txtHoten.Text, txtNgaySinh.Text, txtDiaChi.Text,
+                txtEmail.Text, txtSoSachMuon.Text, txtMaLoaiDG.Text, txtTinhTrang.Text, txtNgayLapThe.Text))
             {
-                Control[] controls = { txtDocGia, txtNgaySinh, txtEmail };
-                string[] fielsName = { "id", "username", "passwrod" };
-                MSS.crud.BindingsFields(dgvAccount, controls, fielsName);
+                MessageBox.Show("Bạn Đã Update Thành Công!", "Quản Lý Thư Viện",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            else
             {
-                Utils.MSG(ex.Message);
-                return;
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại!", "Quản Lý Thư Viện",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

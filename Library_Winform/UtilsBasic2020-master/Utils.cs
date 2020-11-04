@@ -39,6 +39,28 @@ namespace UtilsBasic2020
         }
 
         /// <summary>
+        /// Placeholder Input Enter
+        /// </summary>
+        public static void Enter(TextBox textBox, string txtShow)
+        {
+            if (textBox.Text == txtShow)
+            {
+                textBox.Text = "";
+            }
+        }
+
+        /// <summary>
+        /// Placeholder Input Leave
+        /// </summary>
+        public static void Leave(TextBox txtInput, string txtShow)
+        {
+            if (txtInput.Text == "")
+            {
+                txtInput.Text = txtShow;
+            }
+        }
+
+        /// <summary>
         /// Reset Controls
         /// </summary>
         public static void ResetControls(Control container)

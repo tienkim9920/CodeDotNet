@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSS));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -40,6 +38,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,9 +52,9 @@
             this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label1.Location = new System.Drawing.Point(461, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 44);
+            this.label1.Size = new System.Drawing.Size(102, 44);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Đăng Nhập";
+            this.label1.Text = "Login";
             // 
             // label2
             // 
@@ -66,31 +68,10 @@
             this.label2.Size = new System.Drawing.Size(365, 4);
             this.label2.TabIndex = 2;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Source Sans Pro ExtraLight", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(466, 239);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Tên Đăng Nhập:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Source Sans Pro ExtraLight", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label4.Location = new System.Drawing.Point(466, 346);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(89, 24);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Mật Khẩu:";
-            // 
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
+            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.ForeColor = System.Drawing.Color.RoyalBlue;
             this.txtUsername.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -98,7 +79,10 @@
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(361, 30);
-            this.txtUsername.TabIndex = 4;
+            this.txtUsername.TabIndex = 10;
+            this.txtUsername.Text = "Enter Username!";
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
             // pictureBox1
             // 
@@ -115,13 +99,17 @@
             // txtPassword
             // 
             this.txtPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.RoyalBlue;
             this.txtPassword.Location = new System.Drawing.Point(470, 385);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(361, 30);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 11;
+            this.txtPassword.Text = "Enter Password!";
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // button1
             // 
@@ -156,9 +144,9 @@
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label6.Location = new System.Drawing.Point(42, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(191, 41);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Login Admin";
+            this.label6.Size = new System.Drawing.Size(234, 41);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Admin Manager";
             // 
             // button5
             // 
@@ -175,12 +163,60 @@
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // Form1
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label7.CausesValidation = false;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label7.Location = new System.Drawing.Point(470, 301);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(365, 4);
+            this.label7.TabIndex = 11;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label8.CausesValidation = false;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label8.Location = new System.Drawing.Point(470, 411);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(365, 4);
+            this.label8.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Source Sans Pro ExtraLight", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label4.Location = new System.Drawing.Point(466, 346);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 24);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Password:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Source Sans Pro ExtraLight", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label3.Location = new System.Drawing.Point(466, 239);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Username:";
+            // 
+            // MSS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(872, 596);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -193,9 +229,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "MSS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.MSS_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -207,8 +244,6 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtPassword;
@@ -216,6 +251,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
 

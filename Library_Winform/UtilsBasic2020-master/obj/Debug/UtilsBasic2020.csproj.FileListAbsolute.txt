@@ -4,3 +4,9 @@ D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\obj\De
 D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\obj\Debug\UtilsBasic2020.csproj.CoreCompileInputs.cache
 D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\obj\Debug\UtilsBasic2020.dll
 D:\fpt-aptech\sem03\WFP\csharp\desktop\Assigment\Assigment\UtilsBasic2020\obj\Debug\UtilsBasic2020.pdb
+E:\CodeDotNet\Library_Winform\UtilsBasic2020-master\bin\Debug\UtilsBasic2020.dll
+E:\CodeDotNet\Library_Winform\UtilsBasic2020-master\bin\Debug\UtilsBasic2020.pdb
+E:\CodeDotNet\Library_Winform\UtilsBasic2020-master\obj\Debug\UtilsBasic2020.csprojAssemblyReference.cache
+E:\CodeDotNet\Library_Winform\UtilsBasic2020-master\obj\Debug\UtilsBasic2020.csproj.CoreCompileInputs.cache
+E:\CodeDotNet\Library_Winform\UtilsBasic2020-master\obj\Debug\UtilsBasic2020.dll
+E:\CodeDotNet\Library_Winform\UtilsBasic2020-master\obj\Debug\UtilsBasic2020.pdb

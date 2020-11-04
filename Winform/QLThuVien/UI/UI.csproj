@@ -50,12 +50,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\ControllerDocGia.cs" />
     <Compile Include="DocGia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DocGia.Designer.cs">
       <DependentUpon>DocGia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\DocGia.cs" />
     <Compile Include="MSS.cs">
       <SubType>Form</SubType>
     </Compile>

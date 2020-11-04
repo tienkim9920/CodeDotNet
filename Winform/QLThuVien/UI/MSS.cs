@@ -13,7 +13,7 @@ namespace UI
 {
     public partial class MSS : Form
     {
-        public static CRUD crud = new CRUD(@"Data Source=.\sqlexpress;Initial Catalog=QLThuVien;Integrated Security=True");
+        public static CRUD crud = new CRUD(@"Data Source=DESKTOP-KSVV6FR\SQLEXPRESS;Initial Catalog=QLThuVien;Integrated Security=True");
 
         public MSS()
         {
@@ -56,6 +56,31 @@ namespace UI
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
             Utils.MouseMove(this, Utils.currentPoint, e);
+        }
+
+        private void MSS_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            Utils.Enter(txtUsername, "Enter Username!");
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            Utils.Enter(txtPassword, "Enter Password!");
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            Utils.Leave(txtUsername, "Enter Username!");
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            Utils.Leave(txtPassword, "Enter Password!");
         }
     }
 }
