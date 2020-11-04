@@ -121,7 +121,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(361, 44);
             this.button1.TabIndex = 7;
-            this.button1.Text = "Đăng Nhập";
+            this.button1.Text = "Log In";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -144,9 +144,9 @@
             this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label6.Location = new System.Drawing.Point(42, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(234, 41);
+            this.label6.Size = new System.Drawing.Size(110, 41);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Admin Manager";
+            this.label6.Text = "ADMIN";
             // 
             // button5
             // 

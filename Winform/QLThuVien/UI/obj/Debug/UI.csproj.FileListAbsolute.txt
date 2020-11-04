@@ -28,3 +28,4 @@ E:\CodeDotNet\Winform\QLThuVien\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
 E:\CodeDotNet\Winform\QLThuVien\UI\obj\Debug\UI.csproj.CopyComplete
 E:\CodeDotNet\Winform\QLThuVien\UI\obj\Debug\UI.exe
 E:\CodeDotNet\Winform\QLThuVien\UI\obj\Debug\UI.pdb
+E:\CodeDotNet\Winform\QLThuVien\UI\obj\Debug\UI.TestForm2.resources

@@ -55,18 +55,39 @@ namespace UI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            DocGia docGia = new DocGia();
-            docGia.ShowDialog();
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             this.Hide();
             MSS form1 = new MSS();
             form1.ShowDialog();
+        }
+
+        private void initContainer(Form from, SplitContainer splitContainer)
+        {
+            splitContainer.Panel2.Controls.Clear();
+            from.TopLevel = false;
+            splitContainer.Panel2.Controls.Add(from);
+            from.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            initContainer(new DocGia(), splitContainer1);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
