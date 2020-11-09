@@ -39,18 +39,6 @@ namespace UI
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Main main = new Main();
-            main.ShowDialog();
-        }
-
         private void DocGia_Load(object sender, EventArgs e)
         {
             controller.GetAllDocGia(dataDocGia);
@@ -60,23 +48,49 @@ namespace UI
         {
             try
             {
-                Control[] controls = { txtMaDG, txtMaLoaiDG, txtHoten, txtNgaySinh, txtDiaChi,
-                    txtEmail, txtSoSachMuon, txtNgayLapThe, txtTinhTrang };
+                Control[] controls = { txtMaDG, txtMaLoaiDG, txtHoten, timeNgaySinh, txtDiaChi,
+                    txtEmail, txtSoSachMuon, timeNgayLapThe };
                 string[] fielsName = { "MaDG", "MaLoaiDG","HoTen", "NgaySinh",
                         "DiaChi", "Email", "SoSachMuon", "NgayLapThe", "TinhTrangTraTre" };
                 MSS.crud.BindingsFields(dataDocGia, controls, fielsName);
+
+                string txtCheck = dataDocGia.CurrentRow.Cells[8].Value.ToString();
+
+                if (txtCheck == "True")
+                {
+                    radioButton1.Checked = true;
+                }
+                else
+                {
+                    radioButton2.Checked = true;
+                }
+
             }
             catch (Exception ex)
             {
                 Utils.MSG(ex.Message);
                 return;
             }
+           
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (controller.Update(dataDocGia, txtMaDG.Text, txtHoten.Text, txtNgaySinh.Text, txtDiaChi.Text,
-                txtEmail.Text, txtSoSachMuon.Text, txtMaLoaiDG.Text, txtTinhTrang.Text, txtNgayLapThe.Text))
+            string txtCheck = "";
+            if (radioButton1.Checked)
+            {
+                txtCheck = "True";
+            }
+            else
+            {
+                txtCheck = "False";
+            }
+
+            string txtNgaySinh = timeNgaySinh.Value.ToString();
+            string txtNgayLapThe = timeNgayLapThe.Value.ToString();
+
+            if (controller.Update(dataDocGia, txtMaDG.Text, txtHoten.Text, txtNgaySinh, txtDiaChi.Text,
+                txtEmail.Text, txtSoSachMuon.Text, txtMaLoaiDG.Text, txtCheck, txtNgayLapThe))
             {
                 MessageBox.Show("Bạn Đã Update Thành Công!", "Quản Lý Thư Viện",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -90,47 +104,27 @@ namespace UI
 
         private void btnInsert_Click(object sender, EventArgs e)
         {
-            string[] checkStatus = { "True", "False" };
-
-            if (!Utils.CheckIsDateTime(txtNgaySinh.Text)) 
+            string txtCheck = "";
+            if (radioButton1.Checked)
             {
-                MessageBox.Show("Vui Lòng Kiểm Tra Lại Ngày Sinh!", "Quản Lý Thư Viện",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtNgaySinh.Focus();
-                return;
+                txtCheck = "True";
             }
-            if (!Utils.CheckIsDateTime(txtNgayLapThe.Text))
+            else
             {
-                MessageBox.Show("Vui Lòng Kiểm Tra Lại Ngày Lap The!", "Quản Lý Thư Viện",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtNgayLapThe.Focus();
-                return;
+                txtCheck = "False";
             }
 
-            bool check = false;
-            for (int i = 0; i < checkStatus.Length; i++)
-            {
-                if (txtTinhTrang.Text == checkStatus[i])
-                {
-                    check = true;
-                }
-            }
+            string txtNgaySinh = timeNgaySinh.Value.ToString();
+            string txtNgayLapThe = timeNgayLapThe.Value.ToString();
 
-            if (!check)
+            if (controller.Insert(dataDocGia, txtMaDG.Text, txtMaLoaiDG.Text, txtHoten.Text, txtNgaySinh, txtDiaChi.Text,
+                    txtEmail.Text, txtNgayLapThe, txtSoSachMuon.Text, txtCheck))
             {
-                MessageBox.Show("Vui Lòng Kiểm Tra Lại Tình Trạng!", "Quản Lý Thư Viện",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtTinhTrang.Focus();
-                return;
+                    MessageBox.Show("Bạn Đã Thêm Thành Công!", "Quản Lý Thư Viện",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Utils.ResetControls(groupBox3);
+                    txtSoSachMuon.Text = "VD: 10";
             }
-
-            if (controller.Insert(dataDocGia, txtMaDG.Text, txtMaLoaiDG.Text, txtHoten.Text, txtNgaySinh.Text, txtDiaChi.Text,
-                txtEmail.Text, txtNgayLapThe.Text, txtSoSachMuon.Text, txtTinhTrang.Text))
-            {
-                MessageBox.Show("Bạn Đã Thêm Thành Công!", "Quản Lý Thư Viện",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-           
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -156,46 +150,9 @@ namespace UI
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            txtMaDG.Text = "";
-            txtHoten.Text = "";
-            txtNgaySinh.Text = "yyyy/mm/dd";
-            txtDiaChi.Text = "";
-            txtEmail.Text = "";
+            Utils.ResetControls(groupBox3);
             txtSoSachMuon.Text = "VD: 10";
-            txtMaLoaiDG.Text = "";
-            txtTinhTrang.Text = "True or False";
-            txtNgayLapThe.Text = "yyyy/mm/dd";
-            controller.GetAllDocGia(dataDocGia);
-        }
-
-        private void txtNgaySinh_Enter(object sender, EventArgs e)
-        {
-            Utils.Enter(txtNgaySinh, "yyyy/mm/dd");
-        }
-
-        private void txtNgaySinh_Leave(object sender, EventArgs e)
-        {
-            Utils.Leave(txtNgaySinh, "yyyy/mm/dd");
-        }
-
-        private void txtNgayLapThe_Enter(object sender, EventArgs e)
-        {
-            Utils.Enter(txtNgayLapThe, "yyyy/mm/dd");
-        }
-
-        private void txtNgayLapThe_Leave(object sender, EventArgs e)
-        {
-            Utils.Leave(txtNgayLapThe, "yyyy/mm/dd");
-        }
-
-        private void txtTinhTrang_Enter(object sender, EventArgs e)
-        {
-            Utils.Enter(txtTinhTrang, "True or False");
-        }
-
-        private void txtTinhTrang_Leave(object sender, EventArgs e)
-        {
-            Utils.Leave(txtTinhTrang, "True or False");
+            radioButton1.Checked = true;
         }
 
         private void txtSoSachMuon_Enter(object sender, EventArgs e)
@@ -229,5 +186,11 @@ namespace UI
         {
             Utils.Leave(txtKeyword, "Enter Here!");
         }
+
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
     }
 }

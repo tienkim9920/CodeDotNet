@@ -7,20 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.Models;
 using UtilsBasic2020;
 
 namespace UI
 {
+    public delegate void SendInfor(Account account);
+
     public partial class Main : Form
     {
+
+        private Account account;
+
+        private SendInfor sendInfor;
+
         public Main()
         {
             InitializeComponent();
+            sendInfor = new SendInfor(SendInforAccept);
         }
+
+        public void SendInforAccept(Account oblAccount)
+        {
+            account = oblAccount;
+            txtName.Text = "Xin Chào " + account.Name;
+            txtXinChao.Text = "Xin Chào " + account.Name;
+        }
+
+        //public Main(string Username) : this()
+        //{
+        //    this.txtUsername = Username;
+        //    txtName.Text = "Xin Chào " + txtUsername;
+        //}
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var result = Utils.MSG("Bạn có chắc chắn thoát?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            
         }
 
         private Point currentPoint;
@@ -72,22 +99,23 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            initContainer(new DocGia(), splitContainer1);
+            Utils.InitContainer(new DocGia(), splitContainer1);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            Utils.InitContainer(new CTTraSach(), splitContainer1);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Utils.InitContainer(new Sach(), splitContainer1);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            Utils.InitContainer(new CTMuonSach(), splitContainer1);
         }
+
     }
 }

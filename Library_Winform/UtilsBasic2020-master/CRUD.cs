@@ -220,6 +220,10 @@ namespace UtilsBasic2020
                     {
                         controls[i].DataBindings.Add("Value", dgvView.DataSource, fielsName[i]);
                     }
+                    if (controls[i] is RadioButton)
+                    {
+                        controls[i].DataBindings.Add("Checked", dgvView.DataSource, fielsName[i]);
+                    }
                 }
 
                 foreach(Control control in controls)
@@ -568,7 +572,7 @@ namespace UtilsBasic2020
                 }
                 else
                 {
-                    sql = "select distinct " + fieldShow + " from " + tableName;
+                    sql = "select distinct  *  from " + tableName;
                 }
                 
                 command = new SqlCommand(sql, connection);
@@ -576,6 +580,50 @@ namespace UtilsBasic2020
                 dataSet = new DataSet();
                 adapter.Fill(dataSet, tableName);
                 comboBox.DataSource = dataSet.Tables[tableName];
+                comboBox.DisplayMember = fieldShow;
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+        /// <summary>
+        /// Hiển thị dữ liệu vào ComboBox theo fieldShow
+        /// <code>
+        /// <paramref name="comboBox"/> cần hiển thị
+        /// </code>
+        /// <code>
+        /// <paramref name="tableName"/> tên table cần lấy dữ liệu
+        /// </code>
+        /// <code>
+        /// <paramref name="fieldShow"/> cột cần hiển thị dữ liệu
+        /// </code>
+        /// <code>
+        /// <paramref name="distinct"/> cột cần hiển thị dữ liệu không trùng nhau
+        /// </code>
+        /// </summary>
+        public void LoadComboBoxDataSet(ComboBox comboBox, string tableName, string fieldShow, string fieldID, bool distinct = false)
+        {
+            try
+            {
+                string sql = "";
+                if (!distinct)
+                {
+                    sql = "select * from " + tableName;
+                }
+                else
+                {
+                    sql = "select distinct  *  from " + tableName;
+                }
+
+                command = new SqlCommand(sql, connection);
+                adapter = new SqlDataAdapter(command);
+                dataSet = new DataSet();
+                adapter.Fill(dataSet, tableName);
+                comboBox.DataSource = dataSet.Tables[tableName];
+                comboBox.ValueMember = fieldID;
                 comboBox.DisplayMember = fieldShow;
             }
             catch (Exception ex)
@@ -618,6 +666,61 @@ namespace UtilsBasic2020
                 return;
             }
         }
+
+
+        //Load DataGridView Co Dieu Kien Where
+        public void LoadDataGridViewDataSet(string tableName, DataGridView dgvView,
+            string[] where, string[] whereValues, string[] fields = null, string option = "and")
+        {
+            try
+            {
+                if (fields != null && fields.Length > 0)
+                {
+                    string strJoin = string.Join(",", fields);
+                    sql = new StringBuilder();
+                    sql.Append("select ").Append(strJoin).Append(" from ");
+                }
+                else
+                {
+                    sql = new StringBuilder("select * from ");
+                }
+
+                sql.Append(tableName);
+
+                sql.Append(" where ");
+                if (where.Length == 1)
+                {
+                    sql.Append(where[0]).Append("=").Append("@").Append(where[0]);
+                }
+                else
+                {
+                    for (int i = 0; i < where.Length; i++)
+                    {
+                        sql.Append(where[i]).Append("=").Append("@").Append(where[i]);
+                        if (i == where.Length - 1)
+                        {
+                            break;
+                        }
+                        sql.Append(" ").Append(option).Append(" ");
+                    }
+                }
+
+                command = new SqlCommand(sql.ToString(), connection);
+                ParamsAndValues(command, where, whereValues);
+                adapter = new SqlDataAdapter(command);
+                dataSet = new DataSet();
+                adapter.Fill(dataSet, tableName);
+                dgvView.DataSource = dataSet.Tables[tableName];
+                dgvView.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+
 
         /// <summary>
         /// SqlDataAdapter fill DataTable

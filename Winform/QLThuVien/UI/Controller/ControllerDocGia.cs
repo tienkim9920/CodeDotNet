@@ -123,10 +123,6 @@ namespace UI.Controller
         {
             try
             {
-                //Models.DocGia docGia = new Models.DocGia()
-                //{
-                //    MaDG = MaDG,
-                //};
                 string[] where = { "MaDG", "HoTen" };
                 string[] whereValues = { MaDG, MaDG };
                 MSS.crud.Search(dataGrid, "DOCGIA", where, whereValues);

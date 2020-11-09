@@ -37,16 +37,14 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataDocGia = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtTinhTrang = new System.Windows.Forms.TextBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -56,7 +54,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtNgayLapThe = new System.Windows.Forms.TextBox();
             this.txtMaLoaiDG = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,8 +64,13 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnHide = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.timeNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.timeNgayLapThe = new System.Windows.Forms.DateTimePicker();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGia)).BeginInit();
@@ -187,18 +189,19 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.timeNgayLapThe);
+            this.groupBox3.Controls.Add(this.timeNgaySinh);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton1);
             this.groupBox3.Controls.Add(this.btnRefresh);
             this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.txtTinhTrang);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.txtNgaySinh);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.txtEmail);
             this.groupBox3.Controls.Add(this.label9);
@@ -208,7 +211,6 @@
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.txtNgayLapThe);
             this.groupBox3.Controls.Add(this.txtMaLoaiDG);
             this.groupBox3.Controls.Add(this.txtDiaChi);
             this.groupBox3.Controls.Add(this.label4);
@@ -224,30 +226,31 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Độc Giả";
             // 
-            // label16
+            // btnRefresh
             // 
-            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.CausesValidation = false;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label16.Location = new System.Drawing.Point(260, 353);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(170, 4);
-            this.label16.TabIndex = 21;
+            this.btnRefresh.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(260, 403);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(171, 36);
+            this.btnRefresh.TabIndex = 23;
+            this.btnRefresh.Text = "Làm Mới";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // txtTinhTrang
+            // label22
             // 
-            this.txtTinhTrang.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTinhTrang.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtTinhTrang.Location = new System.Drawing.Point(260, 323);
-            this.txtTinhTrang.Multiline = true;
-            this.txtTinhTrang.Name = "txtTinhTrang";
-            this.txtTinhTrang.Size = new System.Drawing.Size(171, 33);
-            this.txtTinhTrang.TabIndex = 9;
-            this.txtTinhTrang.Text = "True or False";
-            this.txtTinhTrang.Enter += new System.EventHandler(this.txtTinhTrang_Enter);
-            this.txtTinhTrang.Leave += new System.EventHandler(this.txtTinhTrang_Leave);
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label22.CausesValidation = false;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label22.Location = new System.Drawing.Point(44, 432);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(170, 4);
+            this.label22.TabIndex = 22;
             // 
             // label17
             // 
@@ -279,7 +282,7 @@
             this.label19.CausesValidation = false;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label19.Location = new System.Drawing.Point(260, 269);
+            this.label19.Location = new System.Drawing.Point(42, 278);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(170, 4);
             this.label19.TabIndex = 17;
@@ -308,18 +311,6 @@
             this.label13.Size = new System.Drawing.Size(170, 4);
             this.label13.TabIndex = 17;
             // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label12.CausesValidation = false;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label12.Location = new System.Drawing.Point(43, 269);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(170, 4);
-            this.label12.TabIndex = 16;
-            // 
             // label11
             // 
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -331,19 +322,6 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(170, 4);
             this.label11.TabIndex = 15;
-            // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNgaySinh.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtNgaySinh.Location = new System.Drawing.Point(42, 239);
-            this.txtNgaySinh.Multiline = true;
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(171, 33);
-            this.txtNgaySinh.TabIndex = 6;
-            this.txtNgaySinh.Text = "yyyy/mm/dd";
-            this.txtNgaySinh.Enter += new System.EventHandler(this.txtNgaySinh_Enter);
-            this.txtNgaySinh.Leave += new System.EventHandler(this.txtNgaySinh_Leave);
             // 
             // label3
             // 
@@ -445,19 +423,6 @@
             this.label7.Size = new System.Drawing.Size(72, 24);
             this.label7.TabIndex = 5;
             this.label7.Text = "Địa Chỉ:";
-            // 
-            // txtNgayLapThe
-            // 
-            this.txtNgayLapThe.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNgayLapThe.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtNgayLapThe.Location = new System.Drawing.Point(260, 239);
-            this.txtNgayLapThe.Multiline = true;
-            this.txtNgayLapThe.Name = "txtNgayLapThe";
-            this.txtNgayLapThe.Size = new System.Drawing.Size(171, 33);
-            this.txtNgayLapThe.TabIndex = 7;
-            this.txtNgayLapThe.Text = "yyyy/mm/dd";
-            this.txtNgayLapThe.Enter += new System.EventHandler(this.txtNgayLapThe_Enter);
-            this.txtNgayLapThe.Leave += new System.EventHandler(this.txtNgayLapThe_Leave);
             // 
             // txtMaLoaiDG
             // 
@@ -577,31 +542,80 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // label22
+            // btnHide
             // 
-            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label22.CausesValidation = false;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label22.Location = new System.Drawing.Point(44, 432);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(170, 4);
-            this.label22.TabIndex = 22;
+            this.btnHide.BackColor = System.Drawing.Color.Red;
+            this.btnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHide.Font = new System.Drawing.Font("Source Sans Pro", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHide.ForeColor = System.Drawing.Color.Transparent;
+            this.btnHide.Location = new System.Drawing.Point(1214, 12);
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.btnHide.Size = new System.Drawing.Size(47, 41);
+            this.btnHide.TabIndex = 16;
+            this.btnHide.Text = "X";
+            this.btnHide.UseVisualStyleBackColor = false;
+            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
             // 
-            // btnRefresh
+            // radioButton1
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(260, 403);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(171, 36);
-            this.btnRefresh.TabIndex = 23;
-            this.btnRefresh.Text = "Làm Mới";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(260, 328);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(71, 29);
+            this.radioButton1.TabIndex = 25;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "True";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(358, 328);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(75, 29);
+            this.radioButton2.TabIndex = 25;
+            this.radioButton2.Text = "False";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // timeNgaySinh
+            // 
+            this.timeNgaySinh.CalendarForeColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgaySinh.CalendarMonthBackground = System.Drawing.Color.White;
+            this.timeNgaySinh.CalendarTitleBackColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgaySinh.CalendarTitleForeColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgaySinh.CalendarTrailingForeColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.timeNgaySinh.Location = new System.Drawing.Point(42, 242);
+            this.timeNgaySinh.Name = "timeNgaySinh";
+            this.timeNgaySinh.Size = new System.Drawing.Size(170, 33);
+            this.timeNgaySinh.TabIndex = 26;
+            // 
+            // timeNgayLapThe
+            // 
+            this.timeNgayLapThe.CalendarForeColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgayLapThe.CalendarMonthBackground = System.Drawing.Color.White;
+            this.timeNgayLapThe.CalendarTitleBackColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgayLapThe.CalendarTitleForeColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgayLapThe.CalendarTrailingForeColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgayLapThe.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.timeNgayLapThe.Location = new System.Drawing.Point(259, 242);
+            this.timeNgayLapThe.Name = "timeNgayLapThe";
+            this.timeNgayLapThe.Size = new System.Drawing.Size(170, 33);
+            this.timeNgayLapThe.TabIndex = 27;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.CausesValidation = false;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label16.Location = new System.Drawing.Point(259, 278);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(170, 4);
+            this.label16.TabIndex = 28;
             // 
             // DocGia
             // 
@@ -609,6 +623,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1302, 854);
+            this.Controls.Add(this.btnHide);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -662,20 +677,22 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtNgaySinh;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtTinhTrang;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtNgayLapThe;
         private System.Windows.Forms.TextBox txtMaLoaiDG;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnHide;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DateTimePicker timeNgayLapThe;
+        private System.Windows.Forms.DateTimePicker timeNgaySinh;
     }
 }

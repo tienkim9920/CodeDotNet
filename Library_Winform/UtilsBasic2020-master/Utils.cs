@@ -61,6 +61,17 @@ namespace UtilsBasic2020
         }
 
         /// <summary>
+        /// Show splitContainer
+        /// </summary>
+        public static void InitContainer(Form form, SplitContainer splitContainer)
+        {
+            splitContainer.Panel2.Controls.Clear();
+            form.TopLevel = false;
+            splitContainer.Panel2.Controls.Add(form);
+            form.Show();
+        }
+
+        /// <summary>
         /// Reset Controls
         /// </summary>
         public static void ResetControls(Control container)

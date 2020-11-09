@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLThuVien" Class="DataQLTVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-KSVV6FR\SQLEXPRESS;Initial Catalog=QLThuVien;Integrated Security=True" SettingsObjectName="UI.Properties.Settings" SettingsPropertyName="QLThuVienConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.ACCOUNT" Member="ACCOUNTs">
+    <Type Name="ACCOUNT">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTPHIEUMUONSACH" Member="CTPHIEUMUONSACHes">
+    <Type Name="CTPHIEUMUONSACH">
+      <Column Name="MaCTPMS" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaMuonSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CTPHIEUTRASACH" Member="CTPHIEUTRASACHes">
+    <Type Name="CTPHIEUTRASACH">
+      <Column Name="MaCTPTS" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaTraSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SoNgayMuon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TienPhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DOCGIA" Member="DOCGIAs">
+    <Type Name="DOCGIA">
+      <Column Name="MaDG" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaLoaiDG" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="NgaySinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayLapThe" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SoSachMuon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrangTraTre" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHIEUMUONSACH" Member="PHIEUMUONSACHes">
+    <Type Name="PHIEUMUONSACH">
+      <Column Name="MaMuonSach" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayMuon" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHIEUTRASACH" Member="PHIEUTRASACHes">
+    <Type Name="PHIEUTRASACH">
+      <Column Name="MaTraSach" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaMuonSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTra" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SACH" Member="SACHes">
+    <Type Name="SACH">
+      <Column Name="MaSach" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaLoaiSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaTacGia" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayNhap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NhaXB" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NamXB" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaSach" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrangMuon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vDGMuonSach" Member="vDGMuonSaches">
+    <Type Name="vDGMuonSach">
+      <Column Name="MaDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayMuon" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaSach" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrangMuon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vDGMuonSach2" Member="vDGMuonSach2s">
+    <Type Name="vDGMuonSach2">
+      <Column Name="MaDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="MaMuonSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayMuon" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrangMuon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vPhieuSach" Member="vPhieuSaches">
+    <Type Name="vPhieuSach">
+      <Column Name="MaMuonSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaCTPMS" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayMuon" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrangMuon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTraSach" Member="vTraSaches">
+    <Type Name="vTraSach">
+      <Column Name="MaDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="MaMuonSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaTraSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaCTPTS" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayMuon" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTra" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrangMuon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SoNgayMuon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TienPhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
