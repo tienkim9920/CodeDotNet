@@ -56,15 +56,71 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(Utils.TextBoxMSG(txtUsername, "Enter Username!", "Vui lòng nhập tài khoản!", "Quản Lý Thư Viện",
-                MessageBoxButtons.OK, MessageBoxIcon.Error))
+            //if(Utils.TextBoxMSG(txtUsername, "Enter Username!", "Vui lòng nhập tài khoản!", "Quản Lý Thư Viện",
+            //    MessageBoxButtons.OK, MessageBoxIcon.Error))
+            //{
+            //    return;
+            //}
+
+            //if (Utils.TextBoxMSG(txtPassword, "Enter Password!", "Vui lòng nhập mật khẩu!!", "Quản Lý Thư Viện",
+            //    MessageBoxButtons.OK, MessageBoxIcon.Error))
+            //{
+            //    return;
+            //}
+
+            //Account account = new Account()
+            //{
+            //    Username = txtUsername.Text,
+            //    Password = txtPassword.Text
+            //};
+
+            //Account info = CheckLogin(account);
+
+            //if (info != null)
+            //{
+            //    this.Hide();
+            //    Main main = new Main();
+            //    main.SendInforAccept(info);
+            //    main.ShowDialog();
+            //}
+            //else
+            //{
+            //    Utils.MSG("Tài khoản hoặc mật khẩu sai??");
+            //}
+            
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            Utils.MouseDown(e);
+        }
+
+        private void Form1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Utils.MouseMove(this, Utils.currentPoint, e);
+        }
+
+
+        private void btnSingIn_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "Enter Username!")
             {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại Username!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtUsername.Focus();
                 return;
             }
 
-            if (Utils.TextBoxMSG(txtPassword, "Enter Password!", "Vui lòng nhập mật khẩu!!", "Quản Lý Thư Viện",
-                MessageBoxButtons.OK, MessageBoxIcon.Error))
+            if (txtPassword.Text == "Enter Password!")
             {
+                MessageBox.Show("Vui Lòng Kiểm Tra Lại Password!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Focus();
                 return;
             }
 
@@ -86,48 +142,45 @@ namespace UI
             else
             {
                 Utils.MSG("Tài khoản hoặc mật khẩu sai??");
+                txtUsername.Focus();
             }
-            
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void label3_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void Form1_MouseDown(object sender, MouseEventArgs e)
-        {
-            Utils.MouseDown(e);
-        }
-
-        private void Form1_MouseMove(object sender, MouseEventArgs e)
-        {
-            Utils.MouseMove(this, Utils.currentPoint, e);
-        }
-
-        private void MSS_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtUsername_Enter(object sender, EventArgs e)
         {
-            Utils.Enter(txtUsername, "Enter Username!");
-        }
-
-        private void txtPassword_Enter(object sender, EventArgs e)
-        {
-            Utils.Enter(txtPassword, "Enter Password!");
+            if (txtUsername.Text == "Enter Username!")
+            {
+                txtUsername.Text = "";
+            }
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)
         {
-            Utils.Leave(txtUsername, "Enter Username!");
+            if (txtUsername.Text == "")
+            {
+                txtUsername.Text = "Enter Username!";
+            }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Enter Password!")
+            {
+                txtPassword.Text = "";
+            }
         }
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            Utils.Leave(txtPassword, "Enter Password!");
+            if (txtPassword.Text == "")
+            {
+                txtPassword.Text = "Enter Password!";
+            }
         }
     }
 }

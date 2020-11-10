@@ -14,12 +14,19 @@ namespace UI
 {
     public partial class DocGia : Form
     {
+
+        public static bool flag = true;
+
+        public static string maDG;
+        public static string maLoaiDG;
+
         //Controller
         ControllerDocGia controller = new ControllerDocGia();
 
         public DocGia()
         {
             InitializeComponent();
+            maLoaiDG = cbMaLoaiDG.Text + "";
         }
 
         private Point currentPoint;
@@ -42,17 +49,23 @@ namespace UI
         private void DocGia_Load(object sender, EventArgs e)
         {
             controller.GetAllDocGia(dataDocGia);
+            controller.GetAllComboBox(cbMaLoaiDG, "LOAIDG", "MaLoaiDG", "MaLoaiDG");
         }
 
         private void dataDocGia_Click(object sender, EventArgs e)
         {
             try
             {
-                Control[] controls = { txtMaDG, txtMaLoaiDG, txtHoten, timeNgaySinh, txtDiaChi,
+                flag = false;
+
+                Control[] controls = { txtMaDG, cbMaLoaiDG, txtHoten, timeNgaySinh, txtDiaChi,
                     txtEmail, txtSoSachMuon, timeNgayLapThe };
                 string[] fielsName = { "MaDG", "MaLoaiDG","HoTen", "NgaySinh",
                         "DiaChi", "Email", "SoSachMuon", "NgayLapThe", "TinhTrangTraTre" };
                 MSS.crud.BindingsFields(dataDocGia, controls, fielsName);
+
+                maDG = txtMaDG.Text.Trim();
+                maLoaiDG = cbMaLoaiDG.Text + "";
 
                 string txtCheck = dataDocGia.CurrentRow.Cells[8].Value.ToString();
 
@@ -65,6 +78,7 @@ namespace UI
                     radioButton2.Checked = true;
                 }
 
+                flag = true;
             }
             catch (Exception ex)
             {
@@ -90,7 +104,7 @@ namespace UI
             string txtNgayLapThe = timeNgayLapThe.Value.ToString();
 
             if (controller.Update(dataDocGia, txtMaDG.Text, txtHoten.Text, txtNgaySinh, txtDiaChi.Text,
-                txtEmail.Text, txtSoSachMuon.Text, txtMaLoaiDG.Text, txtCheck, txtNgayLapThe))
+                txtEmail.Text, txtSoSachMuon.Text, cbMaLoaiDG.Text.Trim(), txtCheck, txtNgayLapThe))
             {
                 MessageBox.Show("Bạn Đã Update Thành Công!", "Quản Lý Thư Viện",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -102,37 +116,18 @@ namespace UI
             }
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
-        {
-            string txtCheck = "";
-            if (radioButton1.Checked)
-            {
-                txtCheck = "True";
-            }
-            else
-            {
-                txtCheck = "False";
-            }
-
-            string txtNgaySinh = timeNgaySinh.Value.ToString();
-            string txtNgayLapThe = timeNgayLapThe.Value.ToString();
-
-            if (controller.Insert(dataDocGia, txtMaDG.Text, txtMaLoaiDG.Text, txtHoten.Text, txtNgaySinh, txtDiaChi.Text,
-                    txtEmail.Text, txtNgayLapThe, txtSoSachMuon.Text, txtCheck))
-            {
-                    MessageBox.Show("Bạn Đã Thêm Thành Công!", "Quản Lý Thư Viện",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Utils.ResetControls(groupBox3);
-                    txtSoSachMuon.Text = "VD: 10";
-            }
-        }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (controller.Delete(dataDocGia, txtMaDG.Text))
             {
                 MessageBox.Show("Bạn Đã Xóa Thành Công!", "Quản Lý Thư Viện",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Utils.ResetControls(groupBox3);
+                txtSoSachMuon.Text = "0";
+                maDG = "";
+                maLoaiDG = "";
+                radioButton2.Checked = true;
+                controller.GetAllComboBox(cbMaLoaiDG, "LOAIDG", "MaLoaiDG", "MaLoaiDG");
             }
         }
 
@@ -151,8 +146,11 @@ namespace UI
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             Utils.ResetControls(groupBox3);
-            txtSoSachMuon.Text = "VD: 10";
-            radioButton1.Checked = true;
+            txtSoSachMuon.Text = "0";
+            maDG = "";
+            maLoaiDG = "";
+            radioButton2.Checked = true;
+            controller.GetAllComboBox(cbMaLoaiDG, "LOAIDG", "MaLoaiDG", "MaLoaiDG");
         }
 
         private void txtSoSachMuon_Enter(object sender, EventArgs e)
@@ -177,20 +175,76 @@ namespace UI
             }
         }
 
-        private void txtKeyword_Enter(object sender, EventArgs e)
-        {
-            Utils.Enter(txtKeyword, "Enter Here!");
-        }
-
-        private void txtKeyword_Leave(object sender, EventArgs e)
-        {
-            Utils.Leave(txtKeyword, "Enter Here!");
-        }
-
         private void btnHide_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
 
+        private void cbMaLoaiDG_TextChanged(object sender, EventArgs e)
+        {
+            if (!flag)
+            {
+                return;
+            }
+
+            string MLDocGia = cbMaLoaiDG.Text + "";
+            if (MLDocGia == maLoaiDG)
+            {
+                txtMaDG.Text = maDG;
+                return;
+            }
+            else
+            {
+                flag = true;
+            }
+
+            CheckFlag(flag);
+        }
+
+        public void CheckFlag(bool flag)
+        {
+            if (flag)
+            {
+                string MLDocGia = cbMaLoaiDG.Text.Trim();
+                Random random = new Random();
+                string strRand = "DG" + MLDocGia + random.Next(1000, 9999);
+                txtMaDG.Text = strRand.Trim();
+                txtMaDG.ReadOnly = true;
+            }
+        }
+
+        private void btnInsert_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            string txtCheck = "";
+            if (radioButton1.Checked)
+            {
+                txtCheck = "True";
+            }
+            else
+            {
+                txtCheck = "False";
+            }
+
+            string txtNgaySinh = timeNgaySinh.Value.ToString();
+            string txtNgayLapThe = timeNgayLapThe.Value.ToString();
+
+            if (controller.Insert(dataDocGia, txtMaDG.Text, cbMaLoaiDG.Text.Trim(), txtHoten.Text, txtNgaySinh, txtDiaChi.Text,
+                    txtEmail.Text, txtNgayLapThe, txtSoSachMuon.Text, txtCheck))
+            {
+                MessageBox.Show("Bạn Đã Thêm Thành Công!", "Quản Lý Thư Viện",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Utils.ResetControls(groupBox3);
+                txtSoSachMuon.Text = "0";
+                maDG = "";
+                maLoaiDG = "";
+                radioButton2.Checked = true;
+                controller.GetAllComboBox(cbMaLoaiDG, "LOAIDG", "MaLoaiDG", "MaLoaiDG");
+            }
+        }
     }
 }

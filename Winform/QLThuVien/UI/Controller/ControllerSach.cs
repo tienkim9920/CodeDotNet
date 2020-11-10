@@ -14,7 +14,33 @@ namespace UI.Controller
         {
             try
             {
-                MSS.crud.LoadDataGridViewDataSet("SACH", dataGridView);
+                MSS.crud.LoadDataGridViewDataSet("vSach", dataGridView);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+        public void GetAllTacGia(DataGridView dataGridView)
+        {
+            try
+            {
+                MSS.crud.LoadDataGridViewDataSet("TACGIA", dataGridView);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+        public void GetAllComboBox(ComboBox comboBox, string table, string fieldShow, string fieldID)
+        {
+            try
+            {
+                MSS.crud.LoadComboBoxDataSet(comboBox, table, fieldShow, fieldID, true);
             }
             catch (Exception ex)
             {

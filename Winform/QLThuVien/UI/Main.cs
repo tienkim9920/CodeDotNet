@@ -89,14 +89,6 @@ namespace UI
             form1.ShowDialog();
         }
 
-        private void initContainer(Form from, SplitContainer splitContainer)
-        {
-            splitContainer.Panel2.Controls.Clear();
-            from.TopLevel = false;
-            splitContainer.Panel2.Controls.Add(from);
-            from.Show();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Utils.InitContainer(new DocGia(), splitContainer1);

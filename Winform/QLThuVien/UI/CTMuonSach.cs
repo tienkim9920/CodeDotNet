@@ -16,6 +16,8 @@ namespace UI
     {
         ControllerMuonSach muonSach = new ControllerMuonSach();
 
+        DataQLTVDataContext db = new DataQLTVDataContext();
+
         public CTMuonSach()
         {
             InitializeComponent();
@@ -25,25 +27,28 @@ namespace UI
         private static string MaMuonSach;
         private static string MaCTPMS;
 
-        private void LoadComBoDGMuon()
-        {
-            string[] whereDGMuon = { "MaDG" };
-            string[] whereValuesDGMuon = { cbMaDGMuon.SelectedValue.ToString() };
-            string[] fieldsDGMuon = { "MaDG", "HoTen", "NgayMuon", "TenSach", "GiaSach", "TinhTrangMuon" };
-            muonSach.GetAllDataWhere("vDGMuonSach", dataDocGiaMuon, whereDGMuon, whereValuesDGMuon,
-                fieldsDGMuon);
-        }
+        //private void LoadComBoDGMuon()
+        //{
+        //    string[] whereDGMuon = { "MaDG" };
+        //    string[] whereValuesDGMuon = { cbMaDGMuon.SelectedValue.ToString() };
+        //    string[] fieldsDGMuon = { "MaDG", "HoTen", "NgayMuon", "TenSach", "GiaSach", "TinhTrangMuon" };
+        //    muonSach.GetAllDataWhere("vDGMuonSach", dataDocGiaMuon, whereDGMuon, whereValuesDGMuon,
+        //        fieldsDGMuon);
+        //}
 
         private void LoadAllData()
         {
-            muonSach.GetAllComboBox(cbMaDG, "DOCGIA", "MaDG", "MaDG");
-            muonSach.GetAllComboBox(cbMaDGMuon, "DOCGIA", "MaDG", "MaDG");
+            //muonSach.GetAllComboBox(cbMaDG, "DOCGIA", "MaDG", "MaDG");
+            //muonSach.GetAllComboBox(cbMaDGMuon, "DOCGIA", "MaDG", "MaDG");
 
             //List Các Phiếu Mượn
             muonSach.GetAllMuonSach(dataMuonSach, "vPhieuSach");
 
+            string[] fieldsDG = { "MaDG", "HoTen" };
+            muonSach.GetDataFields(dataDocGia, "DOCGIA", fieldsDG);
+
             //List Các Loại Sách Mà 1 Độc Giả Đã Mượn
-            LoadComBoDGMuon();
+            //LoadComBoDGMuon();
 
             //Các Sách Chưa Mượn
             string[] where = { "TinhTrangMuon" };
@@ -91,20 +96,28 @@ namespace UI
             }
 
             string txtNgayMuon = timeNgayMuon.Value.ToString();
-            string txtMaDG = "";
-            if (cbMaDG.Text == "")
+            //string txtMaDG = "";
+            //if (cbMaDG.Text == "")
+            //{
+            //    MessageBox.Show("Vui Lòng Kiểm Tra Lại Mã DG!", "Quản Lý Thư Viện",
+            //    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //else
+            //{
+            //    txtMaDG = cbMaDG.SelectedValue.ToString();
+            //}
+
+            DOCGIA docGia = db.DOCGIAs.Single(dg => dg.MaDG.Equals(txtMaDG.Text.Trim()));
+            if (docGia.SoSachMuon > 4)
             {
-                MessageBox.Show("Vui Lòng Kiểm Tra Lại Mã DG!", "Quản Lý Thư Viện",
+                MessageBox.Show("Mỗi Độc Giả Chỉ Có Thể Mượn Tối Đa 4 Quyển Sách!", "Quản Lý Thư Viện",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            else
-            {
-                txtMaDG = cbMaDG.SelectedValue.ToString();
-            }
 
             if (muonSach.Insert(dataMuonSach, txtMaSach.Text, txtCheck, txtMaMuonSach.Text, 
-                txtMaCTPMS.Text, txtMaDG, txtNgayMuon))
+                txtMaCTPMS.Text, txtMaDG.Text, txtNgayMuon))
             {
                 MessageBox.Show("Bạn Đã Mượn Sách Thành Công!", "Quản Lý Thư Viện",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -136,6 +149,8 @@ namespace UI
                 string strRand2 = "CTPMS" + DateTime.Now.ToString("HHmmss") + random.Next(1, 100);
                 txtMaCTPMS.Text = strRand2;
                 txtMaCTPMS.ReadOnly = true;
+
+                tinhTrangMuon.Checked = true;
             }
             catch (Exception ex)
             {
@@ -193,14 +208,49 @@ namespace UI
             }
         }
 
-        private void cbMaDGMuon_TextChanged(object sender, EventArgs e)
-        {
-            LoadComBoDGMuon();
-        }
+        //private void cbMaDGMuon_TextChanged(object sender, EventArgs e)
+        //{
+        //    LoadComBoDGMuon();
+        //}
 
         private void btnHide_Click(object sender, EventArgs e)
         {
             this.Hide();
         }
+
+        private void dataDocGia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                Control[] controls = { txtMaDG };
+                string[] fielsName = { "MaDG" };
+                MSS.crud.BindingsFields(dataDocGia, controls, fielsName);
+
+                string[] where = { "MaDG" };
+                string[] whereValues = { txtMaDG.Text };
+                muonSach.GetAllDataWhere2("vDGMuonSach", dataDocGiaMuon, where, whereValues);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+        //Tìm Kiếm Độc Giả Cần Mượn
+        private void txtSearchDG_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                muonSach.SearchDG(dataDocGia, txtSearchDG.Text);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
     }
 }

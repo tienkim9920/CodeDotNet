@@ -33,6 +33,12 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cbMaLoaiSach = new System.Windows.Forms.ComboBox();
+            this.cbMaTacGia = new System.Windows.Forms.ComboBox();
+            this.timeNgayNhap = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -51,10 +57,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtNhaXB = new System.Windows.Forms.TextBox();
-            this.txtMaTacGia = new System.Windows.Forms.TextBox();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtMaLoaiSach = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaSach = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -66,10 +70,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.btnHide = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.timeNgayNhap = new System.Windows.Forms.DateTimePicker();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -135,6 +135,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cbMaLoaiSach);
+            this.groupBox3.Controls.Add(this.cbMaTacGia);
             this.groupBox3.Controls.Add(this.timeNgayNhap);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.radioButton2);
@@ -157,10 +159,8 @@
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txtNhaXB);
-            this.groupBox3.Controls.Add(this.txtMaTacGia);
             this.groupBox3.Controls.Add(this.txtTenSach);
             this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.txtMaLoaiSach);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtMaSach);
             this.groupBox3.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,6 +171,72 @@
             this.groupBox3.TabIndex = 20;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Độc Giả";
+            // 
+            // cbMaLoaiSach
+            // 
+            this.cbMaLoaiSach.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaLoaiSach.FormattingEnabled = true;
+            this.cbMaLoaiSach.Location = new System.Drawing.Point(258, 71);
+            this.cbMaLoaiSach.Name = "cbMaLoaiSach";
+            this.cbMaLoaiSach.Size = new System.Drawing.Size(170, 33);
+            this.cbMaLoaiSach.TabIndex = 31;
+            this.cbMaLoaiSach.TextChanged += new System.EventHandler(this.cbMaLoaiSach_TextChanged);
+            // 
+            // cbMaTacGia
+            // 
+            this.cbMaTacGia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaTacGia.FormattingEnabled = true;
+            this.cbMaTacGia.Location = new System.Drawing.Point(40, 156);
+            this.cbMaTacGia.Name = "cbMaTacGia";
+            this.cbMaTacGia.Size = new System.Drawing.Size(170, 33);
+            this.cbMaTacGia.TabIndex = 30;
+            // 
+            // timeNgayNhap
+            // 
+            this.timeNgayNhap.CalendarForeColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgayNhap.CalendarMonthBackground = System.Drawing.Color.White;
+            this.timeNgayNhap.CalendarTitleBackColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgayNhap.CalendarTitleForeColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgayNhap.CalendarTrailingForeColor = System.Drawing.Color.RoyalBlue;
+            this.timeNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.timeNgayNhap.Location = new System.Drawing.Point(40, 239);
+            this.timeNgayNhap.Name = "timeNgayNhap";
+            this.timeNgayNhap.Size = new System.Drawing.Size(170, 33);
+            this.timeNgayNhap.TabIndex = 29;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label12.CausesValidation = false;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label12.Location = new System.Drawing.Point(40, 275);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(170, 4);
+            this.label12.TabIndex = 28;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(356, 328);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(75, 29);
+            this.radioButton2.TabIndex = 26;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "False";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(258, 328);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(71, 29);
+            this.radioButton1.TabIndex = 27;
+            this.radioButton1.Text = "True";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // btnRefresh
             // 
@@ -240,7 +306,7 @@
             this.label21.CausesValidation = false;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label21.Location = new System.Drawing.Point(40, 182);
+            this.label21.Location = new System.Drawing.Point(41, 192);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(170, 4);
             this.label21.TabIndex = 17;
@@ -264,7 +330,7 @@
             this.label11.CausesValidation = false;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label11.Location = new System.Drawing.Point(260, 98);
+            this.label11.Location = new System.Drawing.Point(259, 107);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(170, 4);
             this.label11.TabIndex = 15;
@@ -377,16 +443,6 @@
             this.txtNhaXB.Size = new System.Drawing.Size(171, 33);
             this.txtNhaXB.TabIndex = 7;
             // 
-            // txtMaTacGia
-            // 
-            this.txtMaTacGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaTacGia.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtMaTacGia.Location = new System.Drawing.Point(40, 152);
-            this.txtMaTacGia.Multiline = true;
-            this.txtMaTacGia.Name = "txtMaTacGia";
-            this.txtMaTacGia.Size = new System.Drawing.Size(171, 33);
-            this.txtMaTacGia.TabIndex = 4;
-            // 
             // txtTenSach
             // 
             this.txtTenSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -407,16 +463,6 @@
             this.label4.Size = new System.Drawing.Size(120, 24);
             this.label4.TabIndex = 3;
             this.label4.Text = "Mã Loại Sách:";
-            // 
-            // txtMaLoaiSach
-            // 
-            this.txtMaLoaiSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaLoaiSach.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtMaLoaiSach.Location = new System.Drawing.Point(259, 68);
-            this.txtMaLoaiSach.Multiline = true;
-            this.txtMaLoaiSach.Name = "txtMaLoaiSach";
-            this.txtMaLoaiSach.Size = new System.Drawing.Size(171, 33);
-            this.txtMaLoaiSach.TabIndex = 3;
             // 
             // label2
             // 
@@ -446,7 +492,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox2.Location = new System.Drawing.Point(498, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(766, 753);
+            this.groupBox2.Size = new System.Drawing.Size(766, 747);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Các Loại Sách";
@@ -469,7 +515,7 @@
             this.dataSach.RowHeadersWidth = 51;
             this.dataSach.RowTemplate.Height = 24;
             this.dataSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSach.Size = new System.Drawing.Size(760, 721);
+            this.dataSach.Size = new System.Drawing.Size(760, 715);
             this.dataSach.TabIndex = 9;
             this.dataSach.Click += new System.EventHandler(this.dataSach_Click);
             // 
@@ -543,10 +589,7 @@
             this.txtKeyword.Name = "txtKeyword";
             this.txtKeyword.Size = new System.Drawing.Size(171, 36);
             this.txtKeyword.TabIndex = 0;
-            this.txtKeyword.Text = "Enter Here!";
             this.txtKeyword.TextChanged += new System.EventHandler(this.txtKeyword_TextChanged);
-            this.txtKeyword.Enter += new System.EventHandler(this.txtKeyword_Enter);
-            this.txtKeyword.Leave += new System.EventHandler(this.txtKeyword_Leave);
             // 
             // btnHide
             // 
@@ -562,53 +605,6 @@
             this.btnHide.Text = "X";
             this.btnHide.UseVisualStyleBackColor = false;
             this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(356, 328);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(75, 29);
-            this.radioButton2.TabIndex = 26;
-            this.radioButton2.Text = "False";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(258, 328);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 29);
-            this.radioButton1.TabIndex = 27;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "True";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // timeNgayNhap
-            // 
-            this.timeNgayNhap.CalendarForeColor = System.Drawing.Color.RoyalBlue;
-            this.timeNgayNhap.CalendarMonthBackground = System.Drawing.Color.White;
-            this.timeNgayNhap.CalendarTitleBackColor = System.Drawing.Color.RoyalBlue;
-            this.timeNgayNhap.CalendarTitleForeColor = System.Drawing.Color.RoyalBlue;
-            this.timeNgayNhap.CalendarTrailingForeColor = System.Drawing.Color.RoyalBlue;
-            this.timeNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.timeNgayNhap.Location = new System.Drawing.Point(40, 239);
-            this.timeNgayNhap.Name = "timeNgayNhap";
-            this.timeNgayNhap.Size = new System.Drawing.Size(170, 33);
-            this.timeNgayNhap.TabIndex = 29;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label12.CausesValidation = false;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label12.Location = new System.Drawing.Point(40, 275);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(170, 4);
-            this.label12.TabIndex = 28;
             // 
             // Sach
             // 
@@ -664,10 +660,8 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtNhaXB;
-        private System.Windows.Forms.TextBox txtMaTacGia;
         private System.Windows.Forms.TextBox txtTenSach;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtMaLoaiSach;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaSach;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -683,5 +677,7 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DateTimePicker timeNgayNhap;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbMaTacGia;
+        private System.Windows.Forms.ComboBox cbMaLoaiSach;
     }
 }

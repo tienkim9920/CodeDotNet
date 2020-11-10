@@ -25,12 +25,40 @@ namespace UI.Controller
             }
         }
 
+        public void GetDataFields(DataGridView dataGridView, string tableName, string[] fields)
+        {
+            try
+            {
+                MSS.crud.LoadDataGridViewDataSet(tableName, dataGridView, fields);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
         public void GetAllDataWhere(string tableName, DataGridView dataGridView,
             string[] where, string[] whereValues, string[] fields)
         {
             try
             {
                 MSS.crud.LoadDataGridViewDataSet(tableName, dataGridView, where, whereValues, fields, "and");
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+        public void GetAllDataWhere2(string tableName, DataGridView dataGridView,
+            string[] where, string[] whereValues)
+        {
+            try
+            {
+                string[] fieldsDGMuon = { "MaDG", "HoTen", "NgayMuon", "TenSach", "GiaSach", "TinhTrangMuon" };
+                MSS.crud.LoadDataGridViewDataSet(tableName, dataGridView, where, whereValues, fieldsDGMuon);
             }
             catch (Exception ex)
             {
@@ -116,6 +144,22 @@ namespace UI.Controller
                 string[] where = { "MaMuonSach", "TenSach" };
                 string[] whereValues = { MaMuonSach, MaMuonSach };
                 MSS.crud.Search(dataGrid, "vPhieuSach", where, whereValues);
+            }
+            catch (Exception err)
+            {
+                Utils.MSG(err.Message);
+                return;
+            }
+        }
+
+        public void SearchDG(DataGridView dataGrid, string MaDG)
+        {
+            try
+            {
+                string[] where = { "MaDG", "HoTen" };
+                string[] whereValues = { MaDG, MaDG };
+                string[] fields = { "MaDG", "HoTen" };
+                MSS.crud.Search(dataGrid, "DOCGIA", where, whereValues, fields);
             }
             catch (Exception err)
             {

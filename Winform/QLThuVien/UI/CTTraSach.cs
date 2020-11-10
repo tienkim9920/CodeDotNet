@@ -27,7 +27,10 @@ namespace UI
 
         private void LoadAllData()
         {
-            traSach.GetAllComboBox(cbMaDGMuon, "DOCGIA", "MaDG", "MaDG");
+            //traSach.GetAllComboBox(cbMaDGMuon, "DOCGIA", "MaDG", "MaDG");
+
+            string[] fieldsDG = { "MaDG", "HoTen" };
+            traSach.GetDataFields(dataDocGia, "DOCGIA", fieldsDG);
 
             //Các Sách Chưa Mượn
             string[] where = { "TinhTrangMuon" };
@@ -38,60 +41,80 @@ namespace UI
             //Load Các Phiếu Trả Sách
             traSach.GetAllData(dataTraSach);
 
-            LoadComBoDGMuon();
+            //LoadComBoDGMuon();
         }
 
-        private void LoadComBoDGMuon()
-        {
-            string[] whereDGMuon = { "MaDG" };
-            string[] whereValuesDGMuon = { cbMaDGMuon.SelectedValue.ToString() };
-            string[] fieldsDGMuon = { "MaDG", "HoTen", "MaMuonSach", "MaSach", "TenSach", "NgayMuon", "TinhTrangMuon" };
-            traSach.GetAllDataWhere("vDGMuonSach2", dataDocGiaMuon, whereDGMuon, whereValuesDGMuon,
-                fieldsDGMuon);
-        }
+        //private void LoadComBoDGMuon()
+        //{
+        //    string[] whereDGMuon = { "MaDG" };
+        //    string[] whereValuesDGMuon = { cbMaDGMuon.SelectedValue.ToString() };
+        //    string[] fieldsDGMuon = { "MaDG", "HoTen", "MaMuonSach", "MaSach", "TenSach", "NgayMuon", "TinhTrangMuon" };
+        //    traSach.GetAllDataWhere("vDGMuonSach2", dataDocGiaMuon, whereDGMuon, whereValuesDGMuon,
+        //        fieldsDGMuon);
+        //}
 
-        private void cbMaDGMuon_TextChanged(object sender, EventArgs e)
-        {
-            LoadComBoDGMuon();
-        }
+        //private void cbMaDGMuon_TextChanged(object sender, EventArgs e)
+        //{
+        //    LoadComBoDGMuon();
+        //}
 
         private void dataDocGiaMuon_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Control[] controls = { txtMaDG, txtHoTen, txtMaMuonSach, txtMaSach,
-                    txtTenSach, timeNgayMuon};
-                string[] fielsName = { "MaDG", "HoTen", "MaMuonSach", "MaSach", "TenSach",
-                    "NgayMuon", "TinhTrangMuon" };
-                MSS.crud.BindingsFields(dataDocGiaMuon, controls, fielsName);
+            //try
+            //{
+            //    Control[] controls = { txtMaDG, txtHoTen, txtMaMuonSach, txtMaSach,
+            //        txtTenSach, timeNgayMuon};
+            //    string[] fielsName = { "MaDG", "HoTen", "MaMuonSach", "MaSach", "TenSach",
+            //        "NgayMuon", "TinhTrangMuon" };
+            //    MSS.crud.BindingsFields(dataDocGiaMuon, controls, fielsName);
 
-                string txtCheck = dataDocGiaMuon.CurrentRow.Cells[6].Value.ToString();
+            //    string txtCheck = dataDocGiaMuon.CurrentRow.Cells[6].Value.ToString();
 
-                if (txtCheck == "True")
-                {
-                    tinhTrangMuon.Checked = true;
-                }
+            //    if (txtCheck == "True")
+            //    {
+            //        tinhTrangMuon.Checked = true;
+            //    }
 
-                Random random = new Random();
-                string strRand = "MT" + DateTime.Now.ToString("HHmmss") + random.Next(1, 100);
-                txtMaTraSach.Text = strRand;
-                txtMaTraSach.ReadOnly = true;
+            //    Random random = new Random();
+            //    string strRand = "MT" + DateTime.Now.ToString("HHmmss") + random.Next(1, 100);
+            //    txtMaTraSach.Text = strRand;
+            //    txtMaTraSach.ReadOnly = true;
 
-                string strRand2 = "CTPTS" + DateTime.Now.ToString("HHmmss") + random.Next(1, 100);
-                txtMaCTPTS.Text = strRand2;
-                txtMaCTPTS.ReadOnly = true;
-            }
-            catch (Exception ex)
-            {
-                Utils.MSG(ex.Message);
-                return;
-            }
+            //    string strRand2 = "CTPTS" + DateTime.Now.ToString("HHmmss") + random.Next(1, 100);
+            //    txtMaCTPTS.Text = strRand2;
+            //    txtMaCTPTS.ReadOnly = true;
+            //}
+            //catch (Exception ex)
+            //{
+            //    Utils.MSG(ex.Message);
+            //    return;
+            //}
         }
 
         private void txtSoNgayMuon_TextChanged(object sender, EventArgs e)
         {
-
             string soNgayMuon = txtSoNgayMuon.Text;
+
+            if (soNgayMuon == "-")
+            {
+                MessageBox.Show("Số Ngày Mượn Phải Là Số Dương!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSoNgayMuon.Text = "";
+                txtSoNgayMuon.Focus();
+                return;
+            }
+
+            if (soNgayMuon == "")
+            {
+                soNgayMuon = "0";
+            }
+
+            if (int.Parse(soNgayMuon) < 5)
+            {
+                txtTienPhat.Text = "0đ";
+                txtTienPhat.ReadOnly = true;
+                return;
+            }
 
             if (soNgayMuon == "")
             {
@@ -110,6 +133,26 @@ namespace UI
 
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
+            string soNgayMuon = txtSoNgayMuon.Text;
+
+            if (soNgayMuon == "-")
+            {
+                MessageBox.Show("Số Ngày Mượn Phải Là Số Dương!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSoNgayMuon.Text = "";
+                txtSoNgayMuon.Focus();
+                return;
+            }
+
+            if (soNgayMuon == "")
+            {
+                MessageBox.Show("Số Ngày Mượn Không Được Để Trống!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSoNgayMuon.Text = "";
+                txtSoNgayMuon.Focus();
+                return;
+            }
+
             PHIEUTRASACH phieuTra = new PHIEUTRASACH();
 
             phieuTra.MaTraSach = txtMaTraSach.Text.Trim();
@@ -138,6 +181,80 @@ namespace UI
 
             dataTraSach.DataSource = db.vTraSaches.Select(vts => vts);
 
+            string tempMaDG = txtMaDG.Text;
+            Utils.ResetControls(groupBox3);
+            tinhTrangMuon.Checked = true;
+
+            string[] whereDGMuon = { "MaDG" };
+            string[] whereValuesDGMuon = { tempMaDG };
+            traSach.GetAllDataWhere2("vDGMuonSach2", dataDocGiaMuon, whereDGMuon, whereValuesDGMuon);
+        }
+
+        private void dataDocGiaMuon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Control[] controls = { txtMaDG, txtHoTen, txtMaMuonSach, txtMaSach,
+                    txtTenSach, timeNgayMuon};
+                string[] fielsName = { "MaDG", "HoTen", "MaMuonSach", "MaSach", "TenSach",
+                    "NgayMuon", "TinhTrangMuon" };
+                MSS.crud.BindingsFields(dataDocGiaMuon, controls, fielsName);
+
+                DataGridViewRow rw = this.dataDocGiaMuon.Rows[e.RowIndex];
+                string txtCheck = rw.Cells[6].Value.ToString();
+
+                if (txtCheck == "True")
+                {
+                    tinhTrangMuon.Checked = true;
+                }
+
+                Random random = new Random();
+                string strRand = "MT" + DateTime.Now.ToString("HHmmss") + random.Next(1, 100);
+                txtMaTraSach.Text = strRand;
+                txtMaTraSach.ReadOnly = true;
+
+                string strRand2 = "CTPTS" + DateTime.Now.ToString("HHmmss") + random.Next(1, 100);
+                txtMaCTPTS.Text = strRand2;
+                txtMaCTPTS.ReadOnly = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không Thể Bấm Vào Đây!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void dataDocGia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Control[] controls = { txtMaDG };
+                string[] fielsName = { "MaDG" };
+                MSS.crud.BindingsFields(dataDocGia, controls, fielsName);
+
+                string[] whereDGMuon = { "MaDG" };
+                string[] whereValuesDGMuon = { txtMaDG.Text };
+                traSach.GetAllDataWhere2("vDGMuonSach2", dataDocGiaMuon, whereDGMuon, whereValuesDGMuon);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+        private void txtSearchDG_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                traSach.SearchDG(dataDocGia, txtSearchDG.Text);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
         }
     }
 }

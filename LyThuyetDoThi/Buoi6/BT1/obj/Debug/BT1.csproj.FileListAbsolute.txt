@@ -1,0 +1,7 @@
+E:\CodeDotNet\LyThuyetDoThi\Buoi6\BT1\bin\Debug\BT1.exe.config
+E:\CodeDotNet\LyThuyetDoThi\Buoi6\BT1\bin\Debug\BT1.exe
+E:\CodeDotNet\LyThuyetDoThi\Buoi6\BT1\bin\Debug\BT1.pdb
+E:\CodeDotNet\LyThuyetDoThi\Buoi6\BT1\obj\Debug\BT1.csprojAssemblyReference.cache
+E:\CodeDotNet\LyThuyetDoThi\Buoi6\BT1\obj\Debug\BT1.csproj.CoreCompileInputs.cache
+E:\CodeDotNet\LyThuyetDoThi\Buoi6\BT1\obj\Debug\BT1.exe
+E:\CodeDotNet\LyThuyetDoThi\Buoi6\BT1\obj\Debug\BT1.pdb

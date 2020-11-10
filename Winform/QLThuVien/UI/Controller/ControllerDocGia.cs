@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Bunifu.Framework.UI;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,7 +17,36 @@ namespace UI.Controller
         {
             try
             {
-                MSS.crud.LoadDataGridViewDataSet("DOCGIA", dataGrid);
+                string[] fields = { "MaDG", "MaLoaiDG", "LoaiDG", "HoTen", "NgaySinh", "DiaChi", "Email",
+                    "NgayLapThe", "SoSachMuon", "TinhTrangTraTre" };
+                MSS.crud.LoadDataGridViewDataSet("vDocGia", dataGrid, fields);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+        public void GetAllDataWhere(string tableName, DataGridView dataGridView,
+            string[] where, string[] whereValues, string[] fields)
+        {
+            try
+            {
+                MSS.crud.LoadDataGridViewDataSet(tableName, dataGridView, where, whereValues, fields, "and");
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+        public void GetAllComboBox(ComboBox comboBox, string table, string fieldShow, string fieldID)
+        {
+            try
+            {
+                MSS.crud.LoadComboBoxDataSet(comboBox, table, fieldShow, fieldID, true);
             }
             catch (Exception ex)
             {
@@ -35,12 +65,12 @@ namespace UI.Controller
 
                 Models.DocGia docGia = new Models.DocGia()
                 {
-                    MaDG = MaDG,
+                    MaDG = MaDG.Trim(),
                     MaLoaiDG = MaLoaiDG,
-                    HoTen = HoTen,
+                    HoTen = HoTen.Trim(),
                     NgaySinh = slitNgaySinh[0],
-                    DiaChi = DiaChi,
-                    Email = Email,
+                    DiaChi = DiaChi.Trim(),
+                    Email = Email.Trim(),
                     SoSachMuon = int.Parse(SoSachMuon),
                     TinhTrangTraTre = TinhTrang,
                     NgayLapThe = slitNgayLapThe[0]
@@ -70,18 +100,16 @@ namespace UI.Controller
             {
                 Models.DocGia docGia = new Models.DocGia()
                 {
-                    MaDG = MaDG,
-                    MaLoaiDG = MaLoaiDG,
-                    HoTen = HoTen,
-                    NgaySinh = NgaySinh,
-                    DiaChi = DiaChi,
-                    Email = Email,
+                    MaDG = MaDG.Trim(),
+                    MaLoaiDG = MaLoaiDG.Trim(),
+                    HoTen = HoTen.Trim(),
+                    NgaySinh = NgaySinh.Trim(),
+                    DiaChi = DiaChi.Trim(),
+                    Email = Email.Trim(),
                     NgayLapThe = NgayLapThe,
                     SoSachMuon = int.Parse(SoSachMuon),
                     TinhTrangTraTre = TinhTrang,
                 };
-
-
 
                 string[] parameters = { "MaDG", "MaLoaiDG", "HoTen", "NgaySinh", "DiaChi", "Email", "NgayLapThe", "SoSachMuon",
                     "TinhTrangTraTre" };

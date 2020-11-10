@@ -16,6 +16,11 @@ namespace UI
     {
         ControllerSach controllerSach = new ControllerSach();
 
+        public static bool flag = true;
+
+        public static string maSach;
+        public static string maLoaiSach;
+
         public Sach()
         {
             InitializeComponent();
@@ -29,17 +34,24 @@ namespace UI
         private void Sach_Load(object sender, EventArgs e)
         {
             controllerSach.GetAllSach(dataSach);
+            controllerSach.GetAllComboBox(cbMaTacGia, "TACGIA", "MaTacGia", "MaTacGia");
+            controllerSach.GetAllComboBox(cbMaLoaiSach, "LOAISACH", "MaLoaiSach", "MaLoaiSach");
         }
 
         private void dataSach_Click(object sender, EventArgs e)
         {
             try
             {
-                Control[] controls = { txtMaSach, txtMaLoaiSach, txtMaTacGia, txtTenSach, timeNgayNhap,
+                flag = false;
+
+                Control[] controls = { txtMaSach, cbMaLoaiSach, cbMaTacGia, txtTenSach, timeNgayNhap,
                     txtNhaXB, txtNamXB, txtGiaSach };
                 string[] fielsName = { "MaSach", "MaLoaiSach","MaTacGia", "TenSach",
                         "NgayNhap", "NhaXB", "NamXB", "GiaSach", "TinhTrangMuon" };
                 MSS.crud.BindingsFields(dataSach, controls, fielsName);
+
+                maSach = txtMaSach.Text.Trim();
+                maLoaiSach = cbMaLoaiSach.Text + "";
 
                 string txtCheck = dataSach.CurrentRow.Cells[8].Value.ToString();
 
@@ -51,6 +63,8 @@ namespace UI
                 {
                     radioButton2.Checked = true;
                 }
+
+                flag = true;
             }
             catch (Exception ex)
             {
@@ -62,7 +76,11 @@ namespace UI
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             Utils.ResetControls(groupBox3);
-            radioButton1.Checked = true;
+            radioButton2.Checked = true;
+            maSach = "";
+            maLoaiSach = "";
+            controllerSach.GetAllComboBox(cbMaTacGia, "TACGIA", "MaTacGia", "MaTacGia");
+            controllerSach.GetAllComboBox(cbMaLoaiSach, "LOAISACH", "MaLoaiSach", "MaLoaiSach");
         }
 
         private void btnInsert_Click(object sender, EventArgs e)
@@ -77,16 +95,56 @@ namespace UI
                 txtCheck = "False";
             }
 
+            if (txtTenSach.Text == "")
+            {
+                MessageBox.Show("Tên Sách Không Được Để Trống!", "Quản Lý Thư Viện",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (txtNhaXB.Text == "")
+            {
+                MessageBox.Show("Nhà Xuất Bản Không Được Để Trống!", "Quản Lý Thư Viện",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (txtNamXB.Text == "")
+            {
+                MessageBox.Show("Năm Xuất Bản Không Được Để Trống!", "Quản Lý Thư Viện",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (txtGiaSach.Text == "")
+            {
+                MessageBox.Show("Giá Sách Không Được Để Trống!", "Quản Lý Thư Viện",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (int.Parse(txtGiaSach.Text) < 0)
+            {
+                MessageBox.Show("Giá Sách Phải Là Số Dương!", "Quản Lý Thư Viện",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string txtNgayNhap = timeNgayNhap.Value.ToString();
 
-            if (controllerSach.Insert(dataSach, txtMaSach.Text, txtMaLoaiSach.Text,
-                    txtMaTacGia.Text, txtTenSach.Text, txtNgayNhap, txtNhaXB.Text,
+            if (controllerSach.Insert(dataSach, txtMaSach.Text, cbMaLoaiSach.Text,
+                    cbMaTacGia.Text, txtTenSach.Text, txtNgayNhap, txtNhaXB.Text,
                     txtNamXB.Text, txtGiaSach.Text, txtCheck))
                 {
                     MessageBox.Show("Bạn Đã Thêm Thành Công!", "Quản Lý Thư Viện",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Utils.ResetControls(groupBox3);
-                }
+                    radioButton2.Checked = true;
+                    maSach = "";
+                    maLoaiSach = "";
+                    controllerSach.GetAllComboBox(cbMaTacGia, "TACGIA", "MaTacGia", "MaTacGia");
+                    controllerSach.GetAllComboBox(cbMaLoaiSach, "LOAISACH", "MaLoaiSach", "MaLoaiSach");
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -103,8 +161,8 @@ namespace UI
 
             string txtNgayNhap = timeNgayNhap.Value.ToString();
 
-            if (controllerSach.Update(dataSach, txtMaSach.Text, txtMaLoaiSach.Text,
-                txtMaTacGia.Text, txtTenSach.Text, txtNgayNhap, txtNhaXB.Text,
+            if (controllerSach.Update(dataSach, txtMaSach.Text, cbMaLoaiSach.Text,
+                cbMaTacGia.Text, txtTenSach.Text, txtNgayNhap, txtNhaXB.Text,
                 txtNamXB.Text, txtGiaSach.Text, txtCheck))
             {
                 MessageBox.Show("Bạn Đã Update Thành Công!", "Quản Lý Thư Viện",
@@ -123,6 +181,12 @@ namespace UI
             {
                 MessageBox.Show("Bạn Đã Xóa Thành Công!", "Quản Lý Thư Viện",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Utils.ResetControls(groupBox3);
+                radioButton2.Checked = true;
+                maSach = "";
+                maLoaiSach = "";
+                controllerSach.GetAllComboBox(cbMaTacGia, "TACGIA", "MaTacGia", "MaTacGia");
+                controllerSach.GetAllComboBox(cbMaLoaiSach, "LOAISACH", "MaLoaiSach", "MaLoaiSach");
             }
         }
 
@@ -138,14 +202,39 @@ namespace UI
             }
         }
 
-        private void txtKeyword_Enter(object sender, EventArgs e)
+
+        private void cbMaLoaiSach_TextChanged(object sender, EventArgs e)
         {
-            Utils.Enter(txtKeyword, "Enter Here!");
+            if (!flag)
+            {
+                return;
+            }
+
+            string MLSach = cbMaLoaiSach.Text + "";
+            if (MLSach == maLoaiSach)
+            {
+                txtMaSach.Text = maSach;
+                return;
+            }
+            else
+            {
+                flag = true;
+            }
+
+            CheckFlag(flag);
         }
 
-        private void txtKeyword_Leave(object sender, EventArgs e)
+        public void CheckFlag(bool flag)
         {
-            Utils.Leave(txtKeyword, "Enter Here!");
+            if (flag)
+            {
+                string MLSach = cbMaLoaiSach.Text.Trim();
+                Random random = new Random();
+                string strRand = "S" + MLSach + random.Next(1000, 9999);
+                txtMaSach.Text = strRand.Trim();
+                txtMaSach.ReadOnly = true;
+            }
         }
+
     }
 }

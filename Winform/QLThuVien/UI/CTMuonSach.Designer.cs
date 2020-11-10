@@ -31,6 +31,7 @@
             this.btnHide = new System.Windows.Forms.Button();
             this.btnMuonSach = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtMaDG = new System.Windows.Forms.TextBox();
             this.timeNgayMuon = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaMuonSach = new System.Windows.Forms.TextBox();
             this.txtMaSach = new System.Windows.Forms.TextBox();
-            this.cbMaDG = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtNhaXB = new System.Windows.Forms.TextBox();
             this.tinhTrangMuon = new System.Windows.Forms.RadioButton();
@@ -54,28 +54,32 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtMaCTPMS = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnXoaPhieuMuon = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtKeyword = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dataMuonSach = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataSachChuaMuon = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cbMaDGMuon = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.dataDocGiaMuon = new System.Windows.Forms.DataGridView();
+            this.dataMuonSach = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtKeyword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnXoaPhieuMuon = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtSearchDG = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dataDocGia = new System.Windows.Forms.DataGridView();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMuonSach)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSachChuaMuon)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGiaMuon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMuonSach)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDocGia)).BeginInit();
             this.SuspendLayout();
             // 
             // btnHide
@@ -108,6 +112,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtMaDG);
             this.groupBox3.Controls.Add(this.timeNgayMuon);
             this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.label20);
@@ -115,7 +120,6 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.txtMaMuonSach);
             this.groupBox3.Controls.Add(this.txtMaSach);
-            this.groupBox3.Controls.Add(this.cbMaDG);
             this.groupBox3.Controls.Add(this.btnMuonSach);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.txtNhaXB);
@@ -140,6 +144,17 @@
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Mượn Sách";
+            // 
+            // txtMaDG
+            // 
+            this.txtMaDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaDG.Enabled = false;
+            this.txtMaDG.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtMaDG.Location = new System.Drawing.Point(45, 324);
+            this.txtMaDG.Multiline = true;
+            this.txtMaDG.Name = "txtMaDG";
+            this.txtMaDG.Size = new System.Drawing.Size(171, 33);
+            this.txtMaDG.TabIndex = 42;
             // 
             // timeNgayMuon
             // 
@@ -220,17 +235,6 @@
             this.txtMaSach.Name = "txtMaSach";
             this.txtMaSach.Size = new System.Drawing.Size(171, 33);
             this.txtMaSach.TabIndex = 33;
-            // 
-            // cbMaDG
-            // 
-            this.cbMaDG.BackColor = System.Drawing.Color.White;
-            this.cbMaDG.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.cbMaDG.FormattingEnabled = true;
-            this.cbMaDG.Location = new System.Drawing.Point(46, 324);
-            this.cbMaDG.Margin = new System.Windows.Forms.Padding(0);
-            this.cbMaDG.Name = "cbMaDG";
-            this.cbMaDG.Size = new System.Drawing.Size(170, 33);
-            this.cbMaDG.TabIndex = 3;
             // 
             // label12
             // 
@@ -402,92 +406,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Mã DG Cần Mượn:";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnXoaPhieuMuon);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtKeyword);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.dataMuonSach);
-            this.groupBox2.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox2.Location = new System.Drawing.Point(501, 97);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(763, 360);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh Sách Các Phiếu Mượn";
-            // 
-            // btnXoaPhieuMuon
-            // 
-            this.btnXoaPhieuMuon.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnXoaPhieuMuon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaPhieuMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaPhieuMuon.ForeColor = System.Drawing.Color.White;
-            this.btnXoaPhieuMuon.Location = new System.Drawing.Point(512, 36);
-            this.btnXoaPhieuMuon.Name = "btnXoaPhieuMuon";
-            this.btnXoaPhieuMuon.Size = new System.Drawing.Size(171, 40);
-            this.btnXoaPhieuMuon.TabIndex = 37;
-            this.btnXoaPhieuMuon.Text = "Xóa Phiếu Mượn";
-            this.btnXoaPhieuMuon.UseVisualStyleBackColor = false;
-            this.btnXoaPhieuMuon.Click += new System.EventHandler(this.btnXoaPhieuMuon_Click);
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.CausesValidation = false;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(268, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 4);
-            this.label1.TabIndex = 36;
-            // 
-            // txtKeyword
-            // 
-            this.txtKeyword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtKeyword.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtKeyword.Location = new System.Drawing.Point(268, 43);
-            this.txtKeyword.Multiline = true;
-            this.txtKeyword.Name = "txtKeyword";
-            this.txtKeyword.Size = new System.Drawing.Size(171, 33);
-            this.txtKeyword.TabIndex = 35;
-            this.txtKeyword.TextChanged += new System.EventHandler(this.txtKeyword_TextChanged);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label9.Location = new System.Drawing.Point(54, 51);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(208, 25);
-            this.label9.TabIndex = 34;
-            this.label9.Text = "MaMuonSach/TenSach:";
-            // 
-            // dataMuonSach
-            // 
-            this.dataMuonSach.AllowUserToAddRows = false;
-            this.dataMuonSach.AllowUserToResizeColumns = false;
-            this.dataMuonSach.AllowUserToResizeRows = false;
-            this.dataMuonSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataMuonSach.BackgroundColor = System.Drawing.Color.White;
-            this.dataMuonSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataMuonSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataMuonSach.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataMuonSach.GridColor = System.Drawing.Color.RoyalBlue;
-            this.dataMuonSach.Location = new System.Drawing.Point(3, 91);
-            this.dataMuonSach.Name = "dataMuonSach";
-            this.dataMuonSach.ReadOnly = true;
-            this.dataMuonSach.RowHeadersVisible = false;
-            this.dataMuonSach.RowHeadersWidth = 51;
-            this.dataMuonSach.RowTemplate.Height = 24;
-            this.dataMuonSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataMuonSach.Size = new System.Drawing.Size(757, 266);
-            this.dataMuonSach.TabIndex = 9;
-            this.dataMuonSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMuonSach_CellClick);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -547,53 +465,15 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.cbMaDGMuon);
-            this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.dataDocGiaMuon);
             this.groupBox4.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox4.Location = new System.Drawing.Point(504, 463);
+            this.groupBox4.Location = new System.Drawing.Point(802, 463);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(763, 384);
+            this.groupBox4.Size = new System.Drawing.Size(462, 384);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tra Cứu Các Sách 1 Độc Giả Đã Mượn";
-            // 
-            // cbMaDGMuon
-            // 
-            this.cbMaDGMuon.BackColor = System.Drawing.Color.White;
-            this.cbMaDGMuon.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.cbMaDGMuon.FormattingEnabled = true;
-            this.cbMaDGMuon.Location = new System.Drawing.Point(266, 36);
-            this.cbMaDGMuon.Margin = new System.Windows.Forms.Padding(0);
-            this.cbMaDGMuon.Name = "cbMaDGMuon";
-            this.cbMaDGMuon.Size = new System.Drawing.Size(170, 33);
-            this.cbMaDGMuon.TabIndex = 39;
-            this.cbMaDGMuon.TextChanged += new System.EventHandler(this.cbMaDGMuon_TextChanged);
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label14.CausesValidation = false;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label14.Location = new System.Drawing.Point(266, 72);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(170, 4);
-            this.label14.TabIndex = 38;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label15.Location = new System.Drawing.Point(174, 44);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 25);
-            this.label15.TabIndex = 37;
-            this.label15.Text = "Mã DG:";
             // 
             // dataDocGiaMuon
             // 
@@ -606,15 +486,172 @@
             this.dataDocGiaMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDocGiaMuon.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataDocGiaMuon.GridColor = System.Drawing.Color.RoyalBlue;
-            this.dataDocGiaMuon.Location = new System.Drawing.Point(3, 91);
+            this.dataDocGiaMuon.Location = new System.Drawing.Point(3, 51);
             this.dataDocGiaMuon.Name = "dataDocGiaMuon";
             this.dataDocGiaMuon.ReadOnly = true;
             this.dataDocGiaMuon.RowHeadersVisible = false;
             this.dataDocGiaMuon.RowHeadersWidth = 51;
             this.dataDocGiaMuon.RowTemplate.Height = 24;
             this.dataDocGiaMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataDocGiaMuon.Size = new System.Drawing.Size(757, 290);
+            this.dataDocGiaMuon.Size = new System.Drawing.Size(456, 330);
             this.dataDocGiaMuon.TabIndex = 10;
+            // 
+            // dataMuonSach
+            // 
+            this.dataMuonSach.AllowUserToAddRows = false;
+            this.dataMuonSach.AllowUserToResizeColumns = false;
+            this.dataMuonSach.AllowUserToResizeRows = false;
+            this.dataMuonSach.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataMuonSach.BackgroundColor = System.Drawing.Color.White;
+            this.dataMuonSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataMuonSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataMuonSach.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataMuonSach.GridColor = System.Drawing.Color.RoyalBlue;
+            this.dataMuonSach.Location = new System.Drawing.Point(3, 91);
+            this.dataMuonSach.Name = "dataMuonSach";
+            this.dataMuonSach.ReadOnly = true;
+            this.dataMuonSach.RowHeadersVisible = false;
+            this.dataMuonSach.RowHeadersWidth = 51;
+            this.dataMuonSach.RowTemplate.Height = 24;
+            this.dataMuonSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataMuonSach.Size = new System.Drawing.Size(757, 266);
+            this.dataMuonSach.TabIndex = 9;
+            this.dataMuonSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMuonSach_CellClick);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label9.Location = new System.Drawing.Point(54, 51);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(208, 25);
+            this.label9.TabIndex = 34;
+            this.label9.Text = "MaMuonSach/TenSach:";
+            // 
+            // txtKeyword
+            // 
+            this.txtKeyword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtKeyword.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtKeyword.Location = new System.Drawing.Point(268, 43);
+            this.txtKeyword.Multiline = true;
+            this.txtKeyword.Name = "txtKeyword";
+            this.txtKeyword.Size = new System.Drawing.Size(171, 33);
+            this.txtKeyword.TabIndex = 35;
+            this.txtKeyword.TextChanged += new System.EventHandler(this.txtKeyword_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.CausesValidation = false;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label1.Location = new System.Drawing.Point(268, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 4);
+            this.label1.TabIndex = 36;
+            // 
+            // btnXoaPhieuMuon
+            // 
+            this.btnXoaPhieuMuon.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnXoaPhieuMuon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXoaPhieuMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaPhieuMuon.ForeColor = System.Drawing.Color.White;
+            this.btnXoaPhieuMuon.Location = new System.Drawing.Point(512, 36);
+            this.btnXoaPhieuMuon.Name = "btnXoaPhieuMuon";
+            this.btnXoaPhieuMuon.Size = new System.Drawing.Size(171, 40);
+            this.btnXoaPhieuMuon.TabIndex = 37;
+            this.btnXoaPhieuMuon.Text = "Xóa Phiếu Mượn";
+            this.btnXoaPhieuMuon.UseVisualStyleBackColor = false;
+            this.btnXoaPhieuMuon.Click += new System.EventHandler(this.btnXoaPhieuMuon_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnXoaPhieuMuon);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtKeyword);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.dataMuonSach);
+            this.groupBox2.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.groupBox2.Location = new System.Drawing.Point(501, 97);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(763, 360);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Danh Sách Các Phiếu Mượn";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label16);
+            this.groupBox5.Controls.Add(this.txtSearchDG);
+            this.groupBox5.Controls.Add(this.label23);
+            this.groupBox5.Controls.Add(this.dataDocGia);
+            this.groupBox5.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.groupBox5.Location = new System.Drawing.Point(501, 460);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(298, 360);
+            this.groupBox5.TabIndex = 32;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Tra Cứu Độc Giả Cần Mượn";
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label16.CausesValidation = false;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label16.Location = new System.Drawing.Point(139, 65);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(146, 4);
+            this.label16.TabIndex = 36;
+            // 
+            // txtSearchDG
+            // 
+            this.txtSearchDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearchDG.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtSearchDG.Location = new System.Drawing.Point(139, 35);
+            this.txtSearchDG.Multiline = true;
+            this.txtSearchDG.Name = "txtSearchDG";
+            this.txtSearchDG.Size = new System.Drawing.Size(147, 33);
+            this.txtSearchDG.TabIndex = 35;
+            this.txtSearchDG.TextChanged += new System.EventHandler(this.txtSearchDG_TextChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label23.Location = new System.Drawing.Point(7, 43);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(126, 25);
+            this.label23.TabIndex = 34;
+            this.label23.Text = "MaDG/HoTen:";
+            // 
+            // dataDocGia
+            // 
+            this.dataDocGia.AllowUserToAddRows = false;
+            this.dataDocGia.AllowUserToResizeColumns = false;
+            this.dataDocGia.AllowUserToResizeRows = false;
+            this.dataDocGia.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataDocGia.BackgroundColor = System.Drawing.Color.White;
+            this.dataDocGia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataDocGia.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataDocGia.GridColor = System.Drawing.Color.RoyalBlue;
+            this.dataDocGia.Location = new System.Drawing.Point(3, 91);
+            this.dataDocGia.Name = "dataDocGia";
+            this.dataDocGia.ReadOnly = true;
+            this.dataDocGia.RowHeadersVisible = false;
+            this.dataDocGia.RowHeadersWidth = 51;
+            this.dataDocGia.RowTemplate.Height = 24;
+            this.dataDocGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataDocGia.Size = new System.Drawing.Size(292, 266);
+            this.dataDocGia.TabIndex = 9;
+            this.dataDocGia.Click += new System.EventHandler(this.dataDocGia_Click);
             // 
             // CTMuonSach
             // 
@@ -622,6 +659,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1295, 868);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnHide);
@@ -635,14 +673,16 @@
             this.Text = "CTMuonSach";
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataMuonSach)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSachChuaMuon)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGiaMuon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataMuonSach)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDocGia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,13 +706,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtMaCTPMS;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataMuonSach;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtNhaXB;
-        private System.Windows.Forms.ComboBox cbMaDG;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataSachChuaMuon;
         private System.Windows.Forms.TextBox txtMaSach;
@@ -682,14 +719,19 @@
         private System.Windows.Forms.DateTimePicker timeNgayMuon;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox cbMaDGMuon;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView dataDocGiaMuon;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataMuonSach;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtKeyword;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnXoaPhieuMuon;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtSearchDG;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.DataGridView dataDocGia;
+        private System.Windows.Forms.TextBox txtMaDG;
     }
 }

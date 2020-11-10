@@ -17,16 +17,19 @@ namespace UI.Controller
         {
             var model = db.vTraSaches.Select(vts => vts).ToList();
             dataGridView.DataSource = model;
+        }
 
-            //try
-            //{
-            //    MSS.crud.LoadDataGridViewDataSet(tableName, dataGridView);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Utils.MSG(ex.Message);
-            //    return;
-            //}
+        public void GetDataFields(DataGridView dataGridView, string tableName, string[] fields)
+        {
+            try
+            {
+                MSS.crud.LoadDataGridViewDataSet(tableName, dataGridView, fields);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
         }
 
         public void GetAllDataWhere(string tableName, DataGridView dataGridView,
@@ -57,11 +60,25 @@ namespace UI.Controller
             }
         }
 
+        public void GetAllDataWhere2(string tableName, DataGridView dataGridView,
+            string[] where, string[] whereValues)
+        {
+            try
+            {
+                string[] fieldsDGMuon = { "MaDG", "HoTen", "MaMuonSach", "MaSach", "TenSach", "NgayMuon", "TinhTrangMuon" };
+                MSS.crud.LoadDataGridViewDataSet(tableName, dataGridView, where, whereValues, fieldsDGMuon);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
         public bool InsertTraSach(PHIEUTRASACH phieuTraSach, CTPHIEUTRASACH CTPhieuTraSach)
         {
             try
             {
-
                 db.PHIEUTRASACHes.InsertOnSubmit(phieuTraSach);
                 db.SubmitChanges();
                 db.CTPHIEUTRASACHes.InsertOnSubmit(CTPhieuTraSach);
@@ -73,6 +90,38 @@ namespace UI.Controller
             {
                 Utils.MSG(ex.Message);
                 return true;
+            }
+        }
+
+        public void SearchDG(DataGridView dataGrid, string MaDG)
+        {
+            try
+            {
+                string[] where = { "MaDG", "HoTen" };
+                string[] whereValues = { MaDG, MaDG };
+                string[] fields = { "MaDG", "HoTen" };
+                MSS.crud.Search(dataGrid, "DOCGIA", where, whereValues, fields);
+            }
+            catch (Exception err)
+            {
+                Utils.MSG(err.Message);
+                return;
+            }
+        }
+
+        public void SearchDGMuonSach(DataGridView dataGrid, string MaSach)
+        {
+            try
+            {
+                string[] where = { "MaSach", "TenSach" };
+                string[] whereValues = { MaSach, MaSach };
+                string[] fieldsDGMuon = { "MaDG", "HoTen", "MaMuonSach", "MaSach", "TenSach", "NgayMuon", "TinhTrangMuon" };
+                MSS.crud.Search(dataGrid, "vDGMuonSach2", where, whereValues, fieldsDGMuon);
+            }
+            catch (Exception err)
+            {
+                Utils.MSG(err.Message);
+                return;
             }
         }
 
