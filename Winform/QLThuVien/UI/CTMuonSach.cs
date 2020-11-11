@@ -96,40 +96,29 @@ namespace UI
             }
 
             string txtNgayMuon = timeNgayMuon.Value.ToString();
-            //string txtMaDG = "";
-            //if (cbMaDG.Text == "")
-            //{
-            //    MessageBox.Show("Vui Lòng Kiểm Tra Lại Mã DG!", "Quản Lý Thư Viện",
-            //    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-            //else
-            //{
-            //    txtMaDG = cbMaDG.SelectedValue.ToString();
-            //}
 
             DOCGIA docGia = db.DOCGIAs.Single(dg => dg.MaDG.Equals(txtMaDG.Text.Trim()));
-            if (docGia.SoSachMuon > 4)
+            if (docGia.SoSachMuon > 3)
             {
                 MessageBox.Show("Mỗi Độc Giả Chỉ Có Thể Mượn Tối Đa 4 Quyển Sách!", "Quản Lý Thư Viện",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (muonSach.Insert(dataMuonSach, txtMaSach.Text, txtCheck, txtMaMuonSach.Text, 
-                txtMaCTPMS.Text, txtMaDG.Text, txtNgayMuon))
-            {
-                MessageBox.Show("Bạn Đã Mượn Sách Thành Công!", "Quản Lý Thư Viện",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadAllData();
-                Utils.ResetControls(groupBox3);
-                tinhTrangMuon.Checked = false;
-            }
-            else
-            {
-                MessageBox.Show("Vui Lòng Kiểm Tra Lại!", "Quản Lý Thư Viện",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            muonSach.Insert(dataMuonSach, txtMaSach.Text, txtCheck, txtMaMuonSach.Text,
+                txtMaCTPMS.Text, txtMaDG.Text, txtNgayMuon);
+            MessageBox.Show("Bạn Đã Mượn Sách Thành Công!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Utils.ResetControls(groupBox3);
+            tinhTrangMuon.Checked = false;
+
+            //Các Sách Chưa Mượn
+            string[] where = { "TinhTrangMuon" };
+            string[] whereValues = { "False" };
+            string[] fields = { "MaSach", "TenSach", "NhaXB", "TinhTrangMuon" };
+            muonSach.GetAllDataWhere("SACH", dataSachChuaMuon, where, whereValues, fields);
+
+            muonSach.GetAllMuonSach(dataMuonSach, "vPhieuSach");
         }
 
         //DataGridView Binding Sách Chưa Mượn 

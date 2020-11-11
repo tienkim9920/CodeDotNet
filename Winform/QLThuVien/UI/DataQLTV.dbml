@@ -96,22 +96,6 @@
       <Column Name="TinhTrangMuon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.vTraSach" Member="vTraSaches">
-    <Type Name="vTraSach">
-      <Column Name="MaDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="MaMuonSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="MaTraSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="MaCTPTS" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="MaSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="TenSach" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NgayMuon" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="NgayTra" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="TinhTrangMuon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="SoNgayMuon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TienPhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.LOAIDG" Member="LOAIDGs">
     <Type Name="LOAIDG">
       <Column Name="MaLoaiDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
@@ -130,6 +114,21 @@
       <Column Name="NgayLapThe" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="SoSachMuon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TinhTrangTraTre" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTraSach" Member="vTraSaches">
+    <Type Name="vTraSach">
+      <Column Name="MaDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="MaMuonSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaTraSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaCTPTS" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="MaSach" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSach" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayMuon" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTra" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SoNgayMuon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TienPhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

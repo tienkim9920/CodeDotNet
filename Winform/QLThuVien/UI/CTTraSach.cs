@@ -169,6 +169,11 @@ namespace UI
             string tienPhat = txtTienPhat.Text.Replace('đ', ' ').Trim();
             CTPhieuTra.TienPhat = int.Parse(tienPhat);
 
+
+            CTPHIEUMUONSACH MaCTPMS = db.CTPHIEUMUONSACHes.Single(ct => ct.MaMuonSach.Equals(txtMaMuonSach.Text));
+            db.CTPHIEUMUONSACHes.DeleteOnSubmit(MaCTPMS);
+            db.SubmitChanges();
+
             traSach.InsertTraSach(phieuTra, CTPhieuTra);
 
             SACH sach = db.SACHes.Single(s => s.MaSach.Equals(CTPhieuTra.MaSach));
@@ -179,6 +184,9 @@ namespace UI
             docGia.SoSachMuon -= 1;
             db.SubmitChanges();
 
+            MessageBox.Show("Bạn Đã Trả Sách Thành Công!", "Quản Lý Thư Viện",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             dataTraSach.DataSource = db.vTraSaches.Select(vts => vts);
 
             string tempMaDG = txtMaDG.Text;
@@ -188,6 +196,7 @@ namespace UI
             string[] whereDGMuon = { "MaDG" };
             string[] whereValuesDGMuon = { tempMaDG };
             traSach.GetAllDataWhere2("vDGMuonSach2", dataDocGiaMuon, whereDGMuon, whereValuesDGMuon);
+
         }
 
         private void dataDocGiaMuon_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -216,6 +225,26 @@ namespace UI
                 string strRand2 = "CTPTS" + DateTime.Now.ToString("HHmmss") + random.Next(1, 100);
                 txtMaCTPTS.Text = strRand2;
                 txtMaCTPTS.ReadOnly = true;
+
+                string txtNgayMuon = timeNgayMuon.Text;
+                string txtNgayTra = timeNgayTra.Text;
+
+                string[] splitNgayMuon = txtNgayMuon.Split('/');
+                string[] splitNgayTra = txtNgayTra.Split('/');
+
+                int NgayMuon = int.Parse(splitNgayMuon[1]);
+                int NgayTra = int.Parse(splitNgayTra[1]);
+
+                if (NgayMuon == NgayTra)
+                {
+                    txtSoNgayMuon.Text = "1";
+                }
+
+                if (NgayTra > NgayMuon)
+                {
+                    int tongSoNgayMuon = NgayTra - NgayMuon;
+                    txtSoNgayMuon.Text = tongSoNgayMuon.ToString();
+                }
             }
             catch (Exception ex)
             {

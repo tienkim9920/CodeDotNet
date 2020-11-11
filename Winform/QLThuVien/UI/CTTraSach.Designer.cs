@@ -281,6 +281,7 @@
             // txtSoNgayMuon
             // 
             this.txtSoNgayMuon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSoNgayMuon.Enabled = false;
             this.txtSoNgayMuon.ForeColor = System.Drawing.Color.RoyalBlue;
             this.txtSoNgayMuon.Location = new System.Drawing.Point(48, 499);
             this.txtSoNgayMuon.Multiline = true;

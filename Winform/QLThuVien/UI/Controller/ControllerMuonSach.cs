@@ -97,7 +97,6 @@ namespace UI.Controller
                     NgayMuon = NgayMuon
                 };
 
-                //vPhieuSach
 
                 //Phieu Muon Sach
                 string[] parameters = { "MaMuonSach", "MaDG", "NgayMuon" };
@@ -109,6 +108,7 @@ namespace UI.Controller
                 string[] valueCT = { muonSach.MaCTPMS, muonSach.MaMuonSach, muonSach.MaSach };
                 MSS.crud.Insert("CTPHIEUMUONSACH", parameterCT, valueCT);
 
+
                 //Update Tình Trạng Sách
                 string[] parameterSach = { "TinhTrangMuon" };
                 string[] valueSach = { muonSach.TinhTrang };
@@ -116,16 +116,17 @@ namespace UI.Controller
                 string[] whereValues = { muonSach.MaSach };
                 MSS.crud.Update("SACH", parameterSach, valueSach, where, whereValues);
 
-                var countRow = db.PHIEUMUONSACHes.Where(pms => pms.MaDG.Equals(muonSach.MaDG)).Count();
+                DOCGIA docGia = db.DOCGIAs.Single(dg => dg.MaDG.Equals(muonSach.MaDG));
+                docGia.SoSachMuon += 1;
+                db.SubmitChanges();
 
                 //Update Số Sách Mượn
-                string[] parameterSoSach = { "SoSachMuon" };
-                string[] valueSoSach = { countRow.ToString() };
-                string[] whereSoSach = { "MaDG" };
-                string[] whereValuesSoSach = { muonSach.MaDG };
-                MSS.crud.Update("DOCGIA", parameterSoSach, valueSoSach, whereSoSach, whereValuesSoSach);
+                //string[] parameterSoSach = { "SoSachMuon" };
+                //string[] valueSoSach = { docGia.SoSachMuon.ToString() };
+                //string[] whereSoSach = { "MaDG" };
+                //string[] whereValuesSoSach = { muonSach.MaDG };
+                //MSS.crud.Update("DOCGIA", parameterSoSach, valueSoSach, whereSoSach, whereValuesSoSach);
 
-                GetAllMuonSach(dataGridView, "vPhieuSach");
                 return true;
             }
             catch (Exception err)

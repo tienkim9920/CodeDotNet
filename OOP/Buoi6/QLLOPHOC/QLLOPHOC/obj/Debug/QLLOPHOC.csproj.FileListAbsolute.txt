@@ -1,0 +1,15 @@
+D:\OOP6\QLLOPHOC\QLLOPHOC\bin\Debug\QLLOPHOC.exe.config
+D:\OOP6\QLLOPHOC\QLLOPHOC\bin\Debug\QLLOPHOC.exe
+D:\OOP6\QLLOPHOC\QLLOPHOC\bin\Debug\QLLOPHOC.pdb
+D:\OOP6\QLLOPHOC\QLLOPHOC\bin\Debug\EntityFramework.dll
+D:\OOP6\QLLOPHOC\QLLOPHOC\bin\Debug\EntityFramework.SqlServer.dll
+D:\OOP6\QLLOPHOC\QLLOPHOC\bin\Debug\EntityFramework.xml
+D:\OOP6\QLLOPHOC\QLLOPHOC\bin\Debug\EntityFramework.SqlServer.xml
+D:\OOP6\QLLOPHOC\QLLOPHOC\obj\Debug\QLLOPHOC.csprojAssemblyReference.cache
+D:\OOP6\QLLOPHOC\QLLOPHOC\obj\Debug\QLLOPHOC.Properties.Resources.resources
+D:\OOP6\QLLOPHOC\QLLOPHOC\obj\Debug\QLLOPHOC.csproj.GenerateResource.cache
+D:\OOP6\QLLOPHOC\QLLOPHOC\obj\Debug\QLLOPHOC.csproj.CoreCompileInputs.cache
+D:\OOP6\QLLOPHOC\QLLOPHOC\obj\Debug\QLLOPHOC.csproj.CopyComplete
+D:\OOP6\QLLOPHOC\QLLOPHOC\obj\Debug\QLLOPHOC.exe
+D:\OOP6\QLLOPHOC\QLLOPHOC\obj\Debug\QLLOPHOC.pdb
+D:\OOP6\QLLOPHOC\QLLOPHOC\obj\Debug\QLLOPHOC.frmLopHoc.resources
