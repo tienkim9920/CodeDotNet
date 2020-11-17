@@ -37,6 +37,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataDocGia = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnInsert = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnHide = new System.Windows.Forms.Button();
@@ -70,7 +71,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.cbMaLoaiDG = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnInsert = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGia)).BeginInit();
@@ -85,7 +85,7 @@
             this.groupBox1.Controls.Add(this.txtKeyword);
             this.groupBox1.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox1.Location = new System.Drawing.Point(28, 90);
+            this.groupBox1.Location = new System.Drawing.Point(28, 107);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(461, 113);
             this.groupBox1.TabIndex = 0;
@@ -136,7 +136,7 @@
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label5.Location = new System.Drawing.Point(28, 83);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1230, 3);
+            this.label5.Size = new System.Drawing.Size(1370, 3);
             this.label5.TabIndex = 9;
             // 
             // label6
@@ -155,9 +155,9 @@
             this.groupBox2.Controls.Add(this.dataDocGia);
             this.groupBox2.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox2.Location = new System.Drawing.Point(495, 90);
+            this.groupBox2.Location = new System.Drawing.Point(521, 107);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(766, 752);
+            this.groupBox2.Size = new System.Drawing.Size(884, 788);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Độc Giả";
@@ -180,7 +180,7 @@
             this.dataDocGia.RowHeadersWidth = 51;
             this.dataDocGia.RowTemplate.Height = 24;
             this.dataDocGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataDocGia.Size = new System.Drawing.Size(760, 720);
+            this.dataDocGia.Size = new System.Drawing.Size(878, 756);
             this.dataDocGia.TabIndex = 9;
             this.dataDocGia.Click += new System.EventHandler(this.dataDocGia_Click);
             // 
@@ -191,12 +191,26 @@
             this.groupBox4.Controls.Add(this.btnUpdate);
             this.groupBox4.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox4.Location = new System.Drawing.Point(28, 673);
+            this.groupBox4.Location = new System.Drawing.Point(28, 729);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(461, 166);
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chức Năng";
+            // 
+            // btnInsert
+            // 
+            this.btnInsert.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInsert.Font = new System.Drawing.Font("Ebrima", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert.ForeColor = System.Drawing.Color.White;
+            this.btnInsert.Location = new System.Drawing.Point(141, 32);
+            this.btnInsert.Name = "btnInsert";
+            this.btnInsert.Size = new System.Drawing.Size(171, 47);
+            this.btnInsert.TabIndex = 17;
+            this.btnInsert.Text = "Thêm";
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnDelete
             // 
@@ -232,7 +246,7 @@
             this.btnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHide.Font = new System.Drawing.Font("Source Sans Pro", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHide.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHide.Location = new System.Drawing.Point(1214, 12);
+            this.btnHide.Location = new System.Drawing.Point(1351, 12);
             this.btnHide.Name = "btnHide";
             this.btnHide.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnHide.Size = new System.Drawing.Size(47, 41);
@@ -594,33 +608,19 @@
             this.groupBox3.Controls.Add(this.txtMaDG);
             this.groupBox3.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox3.Location = new System.Drawing.Point(31, 209);
+            this.groupBox3.Location = new System.Drawing.Point(28, 248);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(461, 458);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Độc Giả";
             // 
-            // btnInsert
-            // 
-            this.btnInsert.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInsert.Font = new System.Drawing.Font("Ebrima", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnInsert.Location = new System.Drawing.Point(141, 32);
-            this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(171, 47);
-            this.btnInsert.TabIndex = 17;
-            this.btnInsert.Text = "Thêm";
-            this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
-            // 
             // DocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1302, 854);
+            this.ClientSize = new System.Drawing.Size(1417, 907);
             this.Controls.Add(this.btnHide);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -633,6 +633,7 @@
             this.Name = "DocGia";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "DocGia";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.DocGia_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DocGia_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DocGia_MouseMove);

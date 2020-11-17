@@ -88,7 +88,7 @@
             this.btnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHide.Font = new System.Drawing.Font("Source Sans Pro", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHide.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHide.Location = new System.Drawing.Point(1217, 17);
+            this.btnHide.Location = new System.Drawing.Point(1372, 12);
             this.btnHide.Name = "btnHide";
             this.btnHide.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnHide.Size = new System.Drawing.Size(47, 41);
@@ -102,9 +102,9 @@
             this.btnMuonSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMuonSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMuonSach.ForeColor = System.Drawing.Color.White;
-            this.btnMuonSach.Location = new System.Drawing.Point(151, 393);
+            this.btnMuonSach.Location = new System.Drawing.Point(182, 394);
             this.btnMuonSach.Name = "btnMuonSach";
-            this.btnMuonSach.Size = new System.Drawing.Size(171, 40);
+            this.btnMuonSach.Size = new System.Drawing.Size(171, 51);
             this.btnMuonSach.TabIndex = 5;
             this.btnMuonSach.Text = "Mượn Sách";
             this.btnMuonSach.UseVisualStyleBackColor = false;
@@ -138,9 +138,9 @@
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox3.Location = new System.Drawing.Point(34, 388);
+            this.groupBox3.Location = new System.Drawing.Point(34, 449);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(461, 459);
+            this.groupBox3.Size = new System.Drawing.Size(526, 460);
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Mượn Sách";
@@ -164,7 +164,7 @@
             this.timeNgayMuon.CalendarTitleForeColor = System.Drawing.Color.RoyalBlue;
             this.timeNgayMuon.CalendarTrailingForeColor = System.Drawing.Color.RoyalBlue;
             this.timeNgayMuon.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.timeNgayMuon.Location = new System.Drawing.Point(259, 324);
+            this.timeNgayMuon.Location = new System.Drawing.Point(301, 324);
             this.timeNgayMuon.Name = "timeNgayMuon";
             this.timeNgayMuon.Size = new System.Drawing.Size(170, 33);
             this.timeNgayMuon.TabIndex = 4;
@@ -176,7 +176,7 @@
             this.label21.CausesValidation = false;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label21.Location = new System.Drawing.Point(259, 360);
+            this.label21.Location = new System.Drawing.Point(301, 360);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(170, 4);
             this.label21.TabIndex = 41;
@@ -186,7 +186,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label20.Location = new System.Drawing.Point(255, 286);
+            this.label20.Location = new System.Drawing.Point(297, 286);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(110, 25);
             this.label20.TabIndex = 40;
@@ -243,7 +243,7 @@
             this.label12.CausesValidation = false;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label12.Location = new System.Drawing.Point(261, 192);
+            this.label12.Location = new System.Drawing.Point(303, 192);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(170, 4);
             this.label12.TabIndex = 31;
@@ -253,7 +253,7 @@
             this.txtNhaXB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNhaXB.Enabled = false;
             this.txtNhaXB.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtNhaXB.Location = new System.Drawing.Point(261, 162);
+            this.txtNhaXB.Location = new System.Drawing.Point(303, 162);
             this.txtNhaXB.Multiline = true;
             this.txtNhaXB.Name = "txtNhaXB";
             this.txtNhaXB.Size = new System.Drawing.Size(171, 33);
@@ -278,7 +278,7 @@
             this.label22.CausesValidation = false;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label22.Location = new System.Drawing.Point(260, 104);
+            this.label22.Location = new System.Drawing.Point(302, 104);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(170, 4);
             this.label22.TabIndex = 22;
@@ -288,7 +288,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label17.Location = new System.Drawing.Point(257, 134);
+            this.label17.Location = new System.Drawing.Point(299, 134);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(130, 25);
             this.label17.TabIndex = 20;
@@ -301,7 +301,7 @@
             this.label19.CausesValidation = false;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label19.Location = new System.Drawing.Point(259, 273);
+            this.label19.Location = new System.Drawing.Point(301, 273);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(170, 4);
             this.label19.TabIndex = 17;
@@ -335,7 +335,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label10.Location = new System.Drawing.Point(257, 37);
+            this.label10.Location = new System.Drawing.Point(299, 37);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(93, 25);
             this.label10.TabIndex = 10;
@@ -346,7 +346,7 @@
             this.txtTenSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTenSach.Enabled = false;
             this.txtTenSach.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtTenSach.Location = new System.Drawing.Point(259, 75);
+            this.txtTenSach.Location = new System.Drawing.Point(301, 75);
             this.txtTenSach.Multiline = true;
             this.txtTenSach.Name = "txtTenSach";
             this.txtTenSach.Size = new System.Drawing.Size(171, 33);
@@ -368,7 +368,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label18.Location = new System.Drawing.Point(255, 216);
+            this.label18.Location = new System.Drawing.Point(297, 216);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(103, 25);
             this.label18.TabIndex = 5;
@@ -389,7 +389,7 @@
             // 
             this.txtMaCTPMS.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMaCTPMS.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtMaCTPMS.Location = new System.Drawing.Point(259, 243);
+            this.txtMaCTPMS.Location = new System.Drawing.Point(301, 243);
             this.txtMaCTPMS.Multiline = true;
             this.txtMaCTPMS.Name = "txtMaCTPMS";
             this.txtMaCTPMS.Size = new System.Drawing.Size(171, 33);
@@ -426,7 +426,7 @@
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label5.Location = new System.Drawing.Point(34, 86);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1230, 3);
+            this.label5.Size = new System.Drawing.Size(1385, 3);
             this.label5.TabIndex = 24;
             // 
             // groupBox1
@@ -436,7 +436,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox1.Location = new System.Drawing.Point(34, 97);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(461, 285);
+            this.groupBox1.Size = new System.Drawing.Size(526, 346);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Những Loại Sách Chưa Mượn";
@@ -459,7 +459,7 @@
             this.dataSachChuaMuon.RowHeadersWidth = 51;
             this.dataSachChuaMuon.RowTemplate.Height = 24;
             this.dataSachChuaMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSachChuaMuon.Size = new System.Drawing.Size(455, 253);
+            this.dataSachChuaMuon.Size = new System.Drawing.Size(520, 314);
             this.dataSachChuaMuon.TabIndex = 10;
             this.dataSachChuaMuon.Click += new System.EventHandler(this.dataSachChuaMuon_Click);
             // 
@@ -468,9 +468,9 @@
             this.groupBox4.Controls.Add(this.dataDocGiaMuon);
             this.groupBox4.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox4.Location = new System.Drawing.Point(802, 463);
+            this.groupBox4.Location = new System.Drawing.Point(907, 460);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(462, 384);
+            this.groupBox4.Size = new System.Drawing.Size(509, 449);
             this.groupBox4.TabIndex = 31;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tra Cứu Các Sách 1 Độc Giả Đã Mượn";
@@ -486,14 +486,14 @@
             this.dataDocGiaMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDocGiaMuon.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataDocGiaMuon.GridColor = System.Drawing.Color.RoyalBlue;
-            this.dataDocGiaMuon.Location = new System.Drawing.Point(3, 51);
+            this.dataDocGiaMuon.Location = new System.Drawing.Point(3, 116);
             this.dataDocGiaMuon.Name = "dataDocGiaMuon";
             this.dataDocGiaMuon.ReadOnly = true;
             this.dataDocGiaMuon.RowHeadersVisible = false;
             this.dataDocGiaMuon.RowHeadersWidth = 51;
             this.dataDocGiaMuon.RowTemplate.Height = 24;
             this.dataDocGiaMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataDocGiaMuon.Size = new System.Drawing.Size(456, 330);
+            this.dataDocGiaMuon.Size = new System.Drawing.Size(503, 330);
             this.dataDocGiaMuon.TabIndex = 10;
             // 
             // dataMuonSach
@@ -514,7 +514,7 @@
             this.dataMuonSach.RowHeadersWidth = 51;
             this.dataMuonSach.RowTemplate.Height = 24;
             this.dataMuonSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataMuonSach.Size = new System.Drawing.Size(757, 266);
+            this.dataMuonSach.Size = new System.Drawing.Size(844, 266);
             this.dataMuonSach.TabIndex = 9;
             this.dataMuonSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataMuonSach_CellClick);
             // 
@@ -575,9 +575,9 @@
             this.groupBox2.Controls.Add(this.dataMuonSach);
             this.groupBox2.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox2.Location = new System.Drawing.Point(501, 97);
+            this.groupBox2.Location = new System.Drawing.Point(569, 97);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(763, 360);
+            this.groupBox2.Size = new System.Drawing.Size(850, 360);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Các Phiếu Mượn";
@@ -590,9 +590,9 @@
             this.groupBox5.Controls.Add(this.dataDocGia);
             this.groupBox5.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox5.Location = new System.Drawing.Point(501, 460);
+            this.groupBox5.Location = new System.Drawing.Point(566, 460);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(298, 360);
+            this.groupBox5.Size = new System.Drawing.Size(338, 449);
             this.groupBox5.TabIndex = 32;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tra Cứu Độc Giả Cần Mượn";
@@ -604,7 +604,7 @@
             this.label16.CausesValidation = false;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label16.Location = new System.Drawing.Point(139, 65);
+            this.label16.Location = new System.Drawing.Point(95, 123);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(146, 4);
             this.label16.TabIndex = 36;
@@ -613,7 +613,7 @@
             // 
             this.txtSearchDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchDG.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtSearchDG.Location = new System.Drawing.Point(139, 35);
+            this.txtSearchDG.Location = new System.Drawing.Point(95, 93);
             this.txtSearchDG.Multiline = true;
             this.txtSearchDG.Name = "txtSearchDG";
             this.txtSearchDG.Size = new System.Drawing.Size(147, 33);
@@ -625,7 +625,7 @@
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label23.Location = new System.Drawing.Point(7, 43);
+            this.label23.Location = new System.Drawing.Point(107, 41);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(126, 25);
             this.label23.TabIndex = 34;
@@ -642,14 +642,14 @@
             this.dataDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDocGia.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataDocGia.GridColor = System.Drawing.Color.RoyalBlue;
-            this.dataDocGia.Location = new System.Drawing.Point(3, 91);
+            this.dataDocGia.Location = new System.Drawing.Point(3, 180);
             this.dataDocGia.Name = "dataDocGia";
             this.dataDocGia.ReadOnly = true;
             this.dataDocGia.RowHeadersVisible = false;
             this.dataDocGia.RowHeadersWidth = 51;
             this.dataDocGia.RowTemplate.Height = 24;
             this.dataDocGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataDocGia.Size = new System.Drawing.Size(292, 266);
+            this.dataDocGia.Size = new System.Drawing.Size(332, 266);
             this.dataDocGia.TabIndex = 9;
             this.dataDocGia.Click += new System.EventHandler(this.dataDocGia_Click);
             // 
@@ -658,7 +658,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1295, 868);
+            this.ClientSize = new System.Drawing.Size(1436, 934);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
@@ -671,6 +671,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CTMuonSach";
             this.Text = "CTMuonSach";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);

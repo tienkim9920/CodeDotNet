@@ -35,7 +35,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSingIn = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.txtUsername = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.txtPassword = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,38 +99,13 @@
             this.btnSingIn.IdleFillColor = System.Drawing.Color.RoyalBlue;
             this.btnSingIn.IdleForecolor = System.Drawing.Color.White;
             this.btnSingIn.IdleLineColor = System.Drawing.Color.White;
-            this.btnSingIn.Location = new System.Drawing.Point(590, 472);
+            this.btnSingIn.Location = new System.Drawing.Point(590, 537);
             this.btnSingIn.Margin = new System.Windows.Forms.Padding(5);
             this.btnSingIn.Name = "btnSingIn";
             this.btnSingIn.Size = new System.Drawing.Size(506, 63);
             this.btnSingIn.TabIndex = 15;
             this.btnSingIn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSingIn.Click += new System.EventHandler(this.btnSingIn_Click);
-            // 
-            // bunifuThinButton21
-            // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.RoyalBlue;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Sign Up";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.RoyalBlue;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(590, 574);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(506, 63);
-            this.bunifuThinButton21.TabIndex = 16;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtUsername
             // 
@@ -185,7 +159,6 @@
             this.ClientSize = new System.Drawing.Size(1178, 731);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.bunifuThinButton21);
             this.Controls.Add(this.btnSingIn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -208,7 +181,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSingIn;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtUsername;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txtPassword;
     }

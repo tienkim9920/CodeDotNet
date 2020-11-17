@@ -81,7 +81,7 @@ namespace UI.Controller
         }
 
         //Insert Vào Phiếu Mượn Sách
-        public bool Insert(DataGridView dataGridView, string MaSach, string TinhTrangMuon,
+        public bool Insert(DataGridView dataGridView, DataGridView dataGridView2, string MaSach, string TinhTrangMuon,
             string MaMuonSach, string MaCTPMS, string MaDG, string NgayMuon)
         {
 
@@ -119,13 +119,6 @@ namespace UI.Controller
                 DOCGIA docGia = db.DOCGIAs.Single(dg => dg.MaDG.Equals(muonSach.MaDG));
                 docGia.SoSachMuon += 1;
                 db.SubmitChanges();
-
-                //Update Số Sách Mượn
-                //string[] parameterSoSach = { "SoSachMuon" };
-                //string[] valueSoSach = { docGia.SoSachMuon.ToString() };
-                //string[] whereSoSach = { "MaDG" };
-                //string[] whereValuesSoSach = { muonSach.MaDG };
-                //MSS.crud.Update("DOCGIA", parameterSoSach, valueSoSach, whereSoSach, whereValuesSoSach);
 
                 return true;
             }

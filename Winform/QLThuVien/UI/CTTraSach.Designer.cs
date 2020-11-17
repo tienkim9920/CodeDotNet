@@ -98,9 +98,9 @@
             this.groupBox4.Controls.Add(this.dataDocGiaMuon);
             this.groupBox4.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox4.Location = new System.Drawing.Point(806, 97);
+            this.groupBox4.Location = new System.Drawing.Point(840, 98);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(459, 377);
+            this.groupBox4.Size = new System.Drawing.Size(580, 408);
             this.groupBox4.TabIndex = 38;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tra Cứu Các Sách 1 Độc Giả Đã Mượn";
@@ -116,14 +116,14 @@
             this.dataDocGiaMuon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDocGiaMuon.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataDocGiaMuon.GridColor = System.Drawing.Color.RoyalBlue;
-            this.dataDocGiaMuon.Location = new System.Drawing.Point(3, 44);
+            this.dataDocGiaMuon.Location = new System.Drawing.Point(3, 75);
             this.dataDocGiaMuon.Name = "dataDocGiaMuon";
             this.dataDocGiaMuon.ReadOnly = true;
             this.dataDocGiaMuon.RowHeadersVisible = false;
             this.dataDocGiaMuon.RowHeadersWidth = 51;
             this.dataDocGiaMuon.RowTemplate.Height = 24;
             this.dataDocGiaMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataDocGiaMuon.Size = new System.Drawing.Size(453, 330);
+            this.dataDocGiaMuon.Size = new System.Drawing.Size(574, 330);
             this.dataDocGiaMuon.TabIndex = 10;
             this.dataDocGiaMuon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDocGiaMuon_CellClick);
             this.dataDocGiaMuon.Click += new System.EventHandler(this.dataDocGiaMuon_Click);
@@ -133,9 +133,9 @@
             this.groupBox1.Controls.Add(this.dataSachDaMuon);
             this.groupBox1.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox1.Location = new System.Drawing.Point(35, 718);
+            this.groupBox1.Location = new System.Drawing.Point(41, 754);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(461, 158);
+            this.groupBox1.Size = new System.Drawing.Size(461, 186);
             this.groupBox1.TabIndex = 37;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Những Loại Sách Đã Mượn";
@@ -158,7 +158,7 @@
             this.dataSachDaMuon.RowHeadersWidth = 51;
             this.dataSachDaMuon.RowTemplate.Height = 24;
             this.dataSachDaMuon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSachDaMuon.Size = new System.Drawing.Size(455, 126);
+            this.dataSachDaMuon.Size = new System.Drawing.Size(455, 154);
             this.dataSachDaMuon.TabIndex = 10;
             // 
             // btnHide
@@ -167,7 +167,7 @@
             this.btnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHide.Font = new System.Drawing.Font("Source Sans Pro", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHide.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHide.Location = new System.Drawing.Point(1218, 22);
+            this.btnHide.Location = new System.Drawing.Point(1370, 12);
             this.btnHide.Name = "btnHide";
             this.btnHide.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnHide.Size = new System.Drawing.Size(47, 41);
@@ -217,7 +217,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox3.Location = new System.Drawing.Point(35, 97);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(461, 615);
+            this.groupBox3.Size = new System.Drawing.Size(461, 651);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Trả Sách";
@@ -482,9 +482,9 @@
             this.btnMuonSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMuonSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMuonSach.ForeColor = System.Drawing.Color.White;
-            this.btnMuonSach.Location = new System.Drawing.Point(153, 554);
+            this.btnMuonSach.Location = new System.Drawing.Point(148, 575);
             this.btnMuonSach.Name = "btnMuonSach";
-            this.btnMuonSach.Size = new System.Drawing.Size(171, 40);
+            this.btnMuonSach.Size = new System.Drawing.Size(171, 45);
             this.btnMuonSach.TabIndex = 5;
             this.btnMuonSach.Text = "Trả Sách";
             this.btnMuonSach.UseVisualStyleBackColor = false;
@@ -657,7 +657,7 @@
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label5.Location = new System.Drawing.Point(35, 91);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1230, 3);
+            this.label5.Size = new System.Drawing.Size(1385, 3);
             this.label5.TabIndex = 32;
             // 
             // groupBox2
@@ -668,9 +668,9 @@
             this.groupBox2.Controls.Add(this.dataTraSach);
             this.groupBox2.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox2.Location = new System.Drawing.Point(502, 477);
+            this.groupBox2.Location = new System.Drawing.Point(508, 516);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(763, 399);
+            this.groupBox2.Size = new System.Drawing.Size(912, 424);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Các Phiếu Trả Sách";
@@ -719,14 +719,14 @@
             this.dataTraSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataTraSach.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataTraSach.GridColor = System.Drawing.Color.RoyalBlue;
-            this.dataTraSach.Location = new System.Drawing.Point(3, 92);
+            this.dataTraSach.Location = new System.Drawing.Point(3, 117);
             this.dataTraSach.Name = "dataTraSach";
             this.dataTraSach.ReadOnly = true;
             this.dataTraSach.RowHeadersVisible = false;
             this.dataTraSach.RowHeadersWidth = 51;
             this.dataTraSach.RowTemplate.Height = 24;
             this.dataTraSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataTraSach.Size = new System.Drawing.Size(757, 304);
+            this.dataTraSach.Size = new System.Drawing.Size(906, 304);
             this.dataTraSach.TabIndex = 10;
             // 
             // groupBox5
@@ -739,7 +739,7 @@
             this.groupBox5.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox5.Location = new System.Drawing.Point(502, 98);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(298, 373);
+            this.groupBox5.Size = new System.Drawing.Size(332, 411);
             this.groupBox5.TabIndex = 40;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Tra Cứu Độc Giả Cần Trả Sách";
@@ -789,14 +789,14 @@
             this.dataDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDocGia.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataDocGia.GridColor = System.Drawing.Color.RoyalBlue;
-            this.dataDocGia.Location = new System.Drawing.Point(3, 104);
+            this.dataDocGia.Location = new System.Drawing.Point(3, 142);
             this.dataDocGia.Name = "dataDocGia";
             this.dataDocGia.ReadOnly = true;
             this.dataDocGia.RowHeadersVisible = false;
             this.dataDocGia.RowHeadersWidth = 51;
             this.dataDocGia.RowTemplate.Height = 24;
             this.dataDocGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataDocGia.Size = new System.Drawing.Size(292, 266);
+            this.dataDocGia.Size = new System.Drawing.Size(326, 266);
             this.dataDocGia.TabIndex = 9;
             this.dataDocGia.Click += new System.EventHandler(this.dataDocGia_Click);
             // 
@@ -805,7 +805,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1294, 900);
+            this.ClientSize = new System.Drawing.Size(1442, 960);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox4);
@@ -818,6 +818,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CTTraSach";
             this.Text = "CTTraSach";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGiaMuon)).EndInit();
             this.groupBox1.ResumeLayout(false);

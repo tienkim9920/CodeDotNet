@@ -114,9 +114,10 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.splitContainer1);
-            this.panel2.Location = new System.Drawing.Point(9, 115);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1856, 919);
+            this.panel2.Size = new System.Drawing.Size(1856, 935);
             this.panel2.TabIndex = 2;
             // 
             // splitContainer1
@@ -131,12 +132,14 @@
             this.splitContainer1.Panel1.Controls.Add(this.button3);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1MinSize = 20;
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel3);
-            this.splitContainer1.Size = new System.Drawing.Size(1856, 919);
-            this.splitContainer1.SplitterDistance = 434;
+            this.splitContainer1.Panel2MinSize = 30;
+            this.splitContainer1.Size = new System.Drawing.Size(1856, 935);
+            this.splitContainer1.SplitterDistance = 313;
             this.splitContainer1.TabIndex = 0;
             // 
             // button4
@@ -150,7 +153,7 @@
             this.button4.Location = new System.Drawing.Point(5, 447);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.button4.Size = new System.Drawing.Size(426, 141);
+            this.button4.Size = new System.Drawing.Size(363, 139);
             this.button4.TabIndex = 1;
             this.button4.Text = "Mượn Sách";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -168,7 +171,7 @@
             this.button3.Location = new System.Drawing.Point(3, 653);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.button3.Size = new System.Drawing.Size(426, 141);
+            this.button3.Size = new System.Drawing.Size(365, 141);
             this.button3.TabIndex = 2;
             this.button3.Text = "Trả Sách";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -186,7 +189,7 @@
             this.button2.Location = new System.Drawing.Point(3, 237);
             this.button2.Name = "button2";
             this.button2.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.button2.Size = new System.Drawing.Size(426, 141);
+            this.button2.Size = new System.Drawing.Size(365, 141);
             this.button2.TabIndex = 3;
             this.button2.Text = "Sách";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -204,7 +207,7 @@
             this.button1.Location = new System.Drawing.Point(3, 36);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.button1.Size = new System.Drawing.Size(426, 141);
+            this.button1.Size = new System.Drawing.Size(365, 141);
             this.button1.TabIndex = 4;
             this.button1.Text = "Độc Giả";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -294,7 +297,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1868, 1035);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

@@ -61,6 +61,14 @@ namespace UI
         //Insert Phiếu Mượn Sách
         private void btnMuonSach_Click(object sender, EventArgs e)
         {
+            DOCGIA docGia1 = db.DOCGIAs.Single(dg => dg.MaDG.Equals(txtMaDG.Text.Trim()));
+
+            if (docGia1.SoSachMuon > 3)
+            {
+                MessageBox.Show("Mỗi Độc Giả Chỉ Có Thể Mượn Tối Đa 4 Quyển Sách!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (Utils.TextBoxMSG(txtMaSach, "", "Mã Sách Không Được Để Trống!", "Quản Lý Thư Viện",
                 MessageBoxButtons.OK, MessageBoxIcon.Error))
@@ -97,20 +105,14 @@ namespace UI
 
             string txtNgayMuon = timeNgayMuon.Value.ToString();
 
-            DOCGIA docGia = db.DOCGIAs.Single(dg => dg.MaDG.Equals(txtMaDG.Text.Trim()));
-            if (docGia.SoSachMuon > 3)
-            {
-                MessageBox.Show("Mỗi Độc Giả Chỉ Có Thể Mượn Tối Đa 4 Quyển Sách!", "Quản Lý Thư Viện",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            muonSach.Insert(dataMuonSach, txtMaSach.Text, txtCheck, txtMaMuonSach.Text,
+            muonSach.Insert(dataMuonSach, dataDocGia, txtMaSach.Text, txtCheck, txtMaMuonSach.Text,
                 txtMaCTPMS.Text, txtMaDG.Text, txtNgayMuon);
             MessageBox.Show("Bạn Đã Mượn Sách Thành Công!", "Quản Lý Thư Viện",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string temp = txtMaDG.Text.Trim();
             Utils.ResetControls(groupBox3);
             tinhTrangMuon.Checked = false;
+            txtMaDG.Text = temp;
 
             //Các Sách Chưa Mượn
             string[] where = { "TinhTrangMuon" };
@@ -118,7 +120,15 @@ namespace UI
             string[] fields = { "MaSach", "TenSach", "NhaXB", "TinhTrangMuon" };
             muonSach.GetAllDataWhere("SACH", dataSachChuaMuon, where, whereValues, fields);
 
+            string[] whereDGMuon = { "MaDG" };
+            string[] whereValuesDGMuon = { txtMaDG.Text };
+            muonSach.GetAllDataWhere2("vDGMuonSach", dataDocGiaMuon, whereDGMuon, whereValuesDGMuon);
+
+            LoadAllData();
+
             muonSach.GetAllMuonSach(dataMuonSach, "vPhieuSach");
+
+            db = new DataQLTVDataContext();
         }
 
         //DataGridView Binding Sách Chưa Mượn 

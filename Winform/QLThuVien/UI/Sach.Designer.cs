@@ -84,7 +84,7 @@
             this.groupBox4.Controls.Add(this.btnUpdate);
             this.groupBox4.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox4.Location = new System.Drawing.Point(31, 677);
+            this.groupBox4.Location = new System.Drawing.Point(31, 720);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(461, 167);
             this.groupBox4.TabIndex = 21;
@@ -97,9 +97,9 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(260, 107);
+            this.btnDelete.Location = new System.Drawing.Point(260, 100);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(171, 36);
+            this.btnDelete.Size = new System.Drawing.Size(171, 43);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Xóa";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -111,9 +111,9 @@
             this.btnInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnInsert.Location = new System.Drawing.Point(143, 50);
+            this.btnInsert.Location = new System.Drawing.Point(143, 32);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(171, 36);
+            this.btnInsert.Size = new System.Drawing.Size(171, 40);
             this.btnInsert.TabIndex = 6;
             this.btnInsert.Text = "Thêm";
             this.btnInsert.UseVisualStyleBackColor = false;
@@ -125,9 +125,9 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(26, 107);
+            this.btnUpdate.Location = new System.Drawing.Point(26, 100);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(171, 36);
+            this.btnUpdate.Size = new System.Drawing.Size(171, 43);
             this.btnUpdate.TabIndex = 7;
             this.btnUpdate.Text = "Cập Nhật";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -165,7 +165,7 @@
             this.groupBox3.Controls.Add(this.txtMaSach);
             this.groupBox3.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.groupBox3.Location = new System.Drawing.Point(31, 213);
+            this.groupBox3.Location = new System.Drawing.Point(31, 239);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(461, 459);
             this.groupBox3.TabIndex = 20;
@@ -492,7 +492,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.RoyalBlue;
             this.groupBox2.Location = new System.Drawing.Point(498, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(766, 747);
+            this.groupBox2.Size = new System.Drawing.Size(921, 793);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh Sách Các Loại Sách";
@@ -515,7 +515,7 @@
             this.dataSach.RowHeadersWidth = 51;
             this.dataSach.RowTemplate.Height = 24;
             this.dataSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataSach.Size = new System.Drawing.Size(760, 715);
+            this.dataSach.Size = new System.Drawing.Size(915, 761);
             this.dataSach.TabIndex = 9;
             this.dataSach.Click += new System.EventHandler(this.dataSach_Click);
             // 
@@ -539,7 +539,7 @@
             this.label5.ForeColor = System.Drawing.Color.RoyalBlue;
             this.label5.Location = new System.Drawing.Point(31, 81);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(1230, 3);
+            this.label5.Size = new System.Drawing.Size(1385, 3);
             this.label5.TabIndex = 17;
             // 
             // groupBox1
@@ -597,7 +597,7 @@
             this.btnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHide.Font = new System.Drawing.Font("Source Sans Pro", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHide.ForeColor = System.Drawing.Color.Transparent;
-            this.btnHide.Location = new System.Drawing.Point(1214, 12);
+            this.btnHide.Location = new System.Drawing.Point(1369, 12);
             this.btnHide.Name = "btnHide";
             this.btnHide.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnHide.Size = new System.Drawing.Size(47, 41);
@@ -611,7 +611,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1303, 853);
+            this.ClientSize = new System.Drawing.Size(1431, 899);
             this.Controls.Add(this.btnHide);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -622,6 +622,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Sach";
             this.Text = "Sach";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Sach_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
