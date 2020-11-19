@@ -13,6 +13,8 @@ namespace UI.Controller
     class ControllerDocGia
     {
         //Load Du Lieu
+        DataQLTVDataContext db = new DataQLTVDataContext();
+
         public void GetAllDocGia(DataGridView dataGrid)
         {
             try
@@ -20,6 +22,20 @@ namespace UI.Controller
                 string[] fields = { "MaDG", "MaLoaiDG", "LoaiDG", "HoTen", "NgaySinh", "DiaChi", "Email",
                     "NgayLapThe", "SoSachMuon", "TinhTrangTraTre" };
                 MSS.crud.LoadDataGridViewDataSet("vDocGia", dataGrid, fields);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
+
+        public void GetAllLoaiDG(DataGridView dataGrid)
+        {
+            try
+            {
+                var dsLoaiDG = db.LOAIDGs.Select(value => value);
+                dataGrid.DataSource = dsLoaiDG.ToList();
             }
             catch (Exception ex)
             {
@@ -161,5 +177,61 @@ namespace UI.Controller
                 return;
             }
         }
+
+        public void ThemLoaiDG(DataGridView dataGrid, string txtMaLoaiDG, string txtLoaiDG)
+        {
+            try
+            {
+                LOAIDG loaiDG = new LOAIDG();
+                loaiDG.MaLoaiDG = txtMaLoaiDG;
+                loaiDG.LoaiDG = txtLoaiDG;
+
+                db.LOAIDGs.InsertOnSubmit(loaiDG);
+                db.SubmitChanges();
+
+                var dsLoaiDG = db.LOAIDGs.Select(value => value);
+                dataGrid.DataSource = dsLoaiDG.ToList();
+            }
+            catch (Exception err)
+            {
+                Utils.MSG(err.Message);
+                return;
+            }
+        }
+
+        public void CapNhatLoaiDG(DataGridView dataGrid, string txtMaLoaiDG, string txtLoaiDG)
+        {
+            try
+            {
+                LOAIDG loaiDG = db.LOAIDGs.Single(value => value.MaLoaiDG.Equals(txtMaLoaiDG));
+                loaiDG.LoaiDG = txtLoaiDG;
+                db.SubmitChanges();
+
+                var dsLoaiDG = db.LOAIDGs.Select(value => value);
+                dataGrid.DataSource = dsLoaiDG.ToList();
+            }
+            catch (Exception err)
+            {
+                Utils.MSG(err.Message);
+                return;
+            }
+        }
+
+        public void SearchLoaiDG(DataGridView dataGrid, string txtMaLoaiDG)
+        {
+            try
+            {
+                string[] where = { "MaLoaiDG", "LoaiDG" };
+                string[] whereValues = { txtMaLoaiDG, txtMaLoaiDG };
+                MSS.crud.Search(dataGrid, "LOAIDG", where, whereValues);
+            }
+            catch (Exception err)
+            {
+                Utils.MSG(err.Message);
+                return;
+            }
+        }
+
+
     }
 }

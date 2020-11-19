@@ -31,6 +31,7 @@
             this.btnHide = new System.Windows.Forms.Button();
             this.btnMuonSach = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.txtMaDG = new System.Windows.Forms.TextBox();
             this.timeNgayMuon = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnXoaPhieuMuon = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -102,7 +102,7 @@
             this.btnMuonSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMuonSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMuonSach.ForeColor = System.Drawing.Color.White;
-            this.btnMuonSach.Location = new System.Drawing.Point(182, 394);
+            this.btnMuonSach.Location = new System.Drawing.Point(47, 391);
             this.btnMuonSach.Name = "btnMuonSach";
             this.btnMuonSach.Size = new System.Drawing.Size(171, 51);
             this.btnMuonSach.TabIndex = 5;
@@ -112,6 +112,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnRefresh);
             this.groupBox3.Controls.Add(this.txtMaDG);
             this.groupBox3.Controls.Add(this.timeNgayMuon);
             this.groupBox3.Controls.Add(this.label21);
@@ -144,6 +145,20 @@
             this.groupBox3.TabIndex = 27;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Mượn Sách";
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(301, 391);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(171, 51);
+            this.btnRefresh.TabIndex = 43;
+            this.btnRefresh.Text = "Làm Mới";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // txtMaDG
             // 
@@ -218,6 +233,7 @@
             // txtMaMuonSach
             // 
             this.txtMaMuonSach.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaMuonSach.Enabled = false;
             this.txtMaMuonSach.ForeColor = System.Drawing.Color.RoyalBlue;
             this.txtMaMuonSach.Location = new System.Drawing.Point(45, 242);
             this.txtMaMuonSach.Multiline = true;
@@ -388,6 +404,7 @@
             // txtMaCTPMS
             // 
             this.txtMaCTPMS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaCTPMS.Enabled = false;
             this.txtMaCTPMS.ForeColor = System.Drawing.Color.RoyalBlue;
             this.txtMaCTPMS.Location = new System.Drawing.Point(301, 243);
             this.txtMaCTPMS.Multiline = true;
@@ -523,7 +540,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label9.Location = new System.Drawing.Point(54, 51);
+            this.label9.Location = new System.Drawing.Point(202, 51);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(208, 25);
             this.label9.TabIndex = 34;
@@ -533,7 +550,7 @@
             // 
             this.txtKeyword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtKeyword.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtKeyword.Location = new System.Drawing.Point(268, 43);
+            this.txtKeyword.Location = new System.Drawing.Point(437, 43);
             this.txtKeyword.Multiline = true;
             this.txtKeyword.Name = "txtKeyword";
             this.txtKeyword.Size = new System.Drawing.Size(171, 33);
@@ -547,28 +564,13 @@
             this.label1.CausesValidation = false;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label1.Location = new System.Drawing.Point(268, 73);
+            this.label1.Location = new System.Drawing.Point(437, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 4);
             this.label1.TabIndex = 36;
             // 
-            // btnXoaPhieuMuon
-            // 
-            this.btnXoaPhieuMuon.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnXoaPhieuMuon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoaPhieuMuon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaPhieuMuon.ForeColor = System.Drawing.Color.White;
-            this.btnXoaPhieuMuon.Location = new System.Drawing.Point(512, 36);
-            this.btnXoaPhieuMuon.Name = "btnXoaPhieuMuon";
-            this.btnXoaPhieuMuon.Size = new System.Drawing.Size(171, 40);
-            this.btnXoaPhieuMuon.TabIndex = 37;
-            this.btnXoaPhieuMuon.Text = "Xóa Phiếu Mượn";
-            this.btnXoaPhieuMuon.UseVisualStyleBackColor = false;
-            this.btnXoaPhieuMuon.Click += new System.EventHandler(this.btnXoaPhieuMuon_Click);
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnXoaPhieuMuon);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtKeyword);
             this.groupBox2.Controls.Add(this.label9);
@@ -726,7 +728,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtKeyword;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnXoaPhieuMuon;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label16;
@@ -734,5 +735,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.DataGridView dataDocGia;
         private System.Windows.Forms.TextBox txtMaDG;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

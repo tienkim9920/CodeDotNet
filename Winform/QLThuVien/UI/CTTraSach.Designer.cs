@@ -34,6 +34,7 @@
             this.dataSachDaMuon = new System.Windows.Forms.DataGridView();
             this.btnHide = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.txtTienPhat = new System.Windows.Forms.TextBox();
@@ -177,6 +178,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnRefresh);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.label27);
             this.groupBox3.Controls.Add(this.txtTienPhat);
@@ -222,6 +224,20 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông Tin Trả Sách";
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(262, 571);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(171, 45);
+            this.btnRefresh.TabIndex = 57;
+            this.btnRefresh.Text = "Làm Mới";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // label26
             // 
             this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -248,6 +264,7 @@
             // txtTienPhat
             // 
             this.txtTienPhat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTienPhat.Enabled = false;
             this.txtTienPhat.ForeColor = System.Drawing.Color.RoyalBlue;
             this.txtTienPhat.Location = new System.Drawing.Point(264, 499);
             this.txtTienPhat.Multiline = true;
@@ -482,7 +499,7 @@
             this.btnMuonSach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMuonSach.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMuonSach.ForeColor = System.Drawing.Color.White;
-            this.btnMuonSach.Location = new System.Drawing.Point(148, 575);
+            this.btnMuonSach.Location = new System.Drawing.Point(46, 571);
             this.btnMuonSach.Name = "btnMuonSach";
             this.btnMuonSach.Size = new System.Drawing.Size(171, 45);
             this.btnMuonSach.TabIndex = 5;
@@ -630,6 +647,7 @@
             // txtMaCTPTS
             // 
             this.txtMaCTPTS.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaCTPTS.Enabled = false;
             this.txtMaCTPTS.ForeColor = System.Drawing.Color.RoyalBlue;
             this.txtMaCTPTS.Location = new System.Drawing.Point(47, 414);
             this.txtMaCTPTS.Multiline = true;
@@ -751,7 +769,7 @@
             this.label30.CausesValidation = false;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label30.Location = new System.Drawing.Point(139, 65);
+            this.label30.Location = new System.Drawing.Point(86, 117);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(146, 4);
             this.label30.TabIndex = 36;
@@ -760,7 +778,7 @@
             // 
             this.txtSearchDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchDG.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtSearchDG.Location = new System.Drawing.Point(139, 35);
+            this.txtSearchDG.Location = new System.Drawing.Point(86, 87);
             this.txtSearchDG.Multiline = true;
             this.txtSearchDG.Name = "txtSearchDG";
             this.txtSearchDG.Size = new System.Drawing.Size(147, 33);
@@ -772,7 +790,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label31.Location = new System.Drawing.Point(7, 43);
+            this.label31.Location = new System.Drawing.Point(95, 46);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(126, 25);
             this.label31.TabIndex = 34;
@@ -789,14 +807,14 @@
             this.dataDocGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDocGia.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataDocGia.GridColor = System.Drawing.Color.RoyalBlue;
-            this.dataDocGia.Location = new System.Drawing.Point(3, 142);
+            this.dataDocGia.Location = new System.Drawing.Point(3, 161);
             this.dataDocGia.Name = "dataDocGia";
             this.dataDocGia.ReadOnly = true;
             this.dataDocGia.RowHeadersVisible = false;
             this.dataDocGia.RowHeadersWidth = 51;
             this.dataDocGia.RowTemplate.Height = 24;
             this.dataDocGia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataDocGia.Size = new System.Drawing.Size(326, 266);
+            this.dataDocGia.Size = new System.Drawing.Size(326, 247);
             this.dataDocGia.TabIndex = 9;
             this.dataDocGia.Click += new System.EventHandler(this.dataDocGia_Click);
             // 
@@ -892,5 +910,6 @@
         private System.Windows.Forms.TextBox txtSearchDG;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.DataGridView dataDocGia;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

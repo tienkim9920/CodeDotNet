@@ -36,6 +36,9 @@ namespace UI
             controllerSach.GetAllSach(dataSach);
             controllerSach.GetAllComboBox(cbMaTacGia, "TACGIA", "MaTacGia", "MaTacGia");
             controllerSach.GetAllComboBox(cbMaLoaiSach, "LOAISACH", "MaLoaiSach", "MaLoaiSach");
+
+            controllerSach.GetAllLoaiSach(dataLoaiSach);
+            LoadMaLoaiSach();
         }
 
         private void dataSach_Click(object sender, EventArgs e)
@@ -235,6 +238,73 @@ namespace UI
                 txtMaSach.ReadOnly = true;
             }
         }
+
+        public void LoadMaLoaiSach()
+        {
+            Random random = new Random();
+            string strRand = "MLS" + DateTime.Now.ToString("HHmmss") + random.Next(10, 100);
+            txtMaLoaiSach.Text = strRand.Trim();
+        }
+
+        private void btnRefreshLoaiSach_Click(object sender, EventArgs e)
+        {
+            Utils.ResetControls(groupBox5);
+            LoadMaLoaiSach();
+        }
+
+        private void ThemLoaiSach_Click(object sender, EventArgs e)
+        {
+            if (txtLoaiSach.Text == "")
+            {
+                MessageBox.Show("LoaiSach Không Được Để Trống!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            controllerSach.ThemLoaiSach(dataLoaiSach, txtMaLoaiSach.Text.Trim(), txtLoaiSach.Text.Trim());
+            MessageBox.Show("Thêm Loại Sách Thành Công!", "Quản Lý Thư Viện",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Utils.ResetControls(groupBox5);
+            LoadMaLoaiSach();
+            controllerSach.GetAllComboBox(cbMaLoaiSach, "LOAISACH", "MaLoaiSach", "MaLoaiSach");
+        }
+
+        private void dataLoaiSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Control[] controls = { txtMaLoaiSach, txtLoaiSach };
+            string[] fields = { "MaLoaiSach", "LoaiSach" };
+            MSS.crud.BindingsFields(dataLoaiSach, controls, fields);
+        }
+
+        private void btnUpdateLoaiSach_Click(object sender, EventArgs e)
+        {
+            if (txtLoaiSach.Text == "")
+            {
+                MessageBox.Show("LoaiSach Không Được Để Trống!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            controllerSach.CapNhatLoaiSach(dataLoaiSach, txtMaLoaiSach.Text.Trim(), txtLoaiSach.Text.Trim());
+            MessageBox.Show("Thêm Loại Sách Thành Công!", "Quản Lý Thư Viện",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Utils.ResetControls(groupBox5);
+            LoadMaLoaiSach();
+            controllerSach.GetAllComboBox(cbMaLoaiSach, "LOAISACH", "MaLoaiSach", "MaLoaiSach");
+        }
+
+        private void txtSearchLoaiSach_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                controllerSach.SearchLoaiSACH(dataLoaiSach, txtSearchLoaiSach.Text);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+            }
+        }
+
 
     }
 }

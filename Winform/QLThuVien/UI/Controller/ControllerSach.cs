@@ -10,6 +10,8 @@ namespace UI.Controller
 {
     class ControllerSach
     {
+        DataQLTVDataContext db = new DataQLTVDataContext();
+
         public void GetAllSach(DataGridView dataGridView)
         {
             try
@@ -155,6 +157,72 @@ namespace UI.Controller
             }
         }
 
+        public void GetAllLoaiSach(DataGridView dataGrid)
+        {
+            try
+            {
+                var dsLoaiDG = db.LOAISACHes.Select(value => value);
+                dataGrid.DataSource = dsLoaiDG.ToList();
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+                return;
+            }
+        }
 
+        public void ThemLoaiSach(DataGridView dataGrid, string txtMaLoaiSach, string txtLoaiSach)
+        {
+            try
+            {
+                LOAISACH loaiSach = new LOAISACH();
+                loaiSach.MaLoaiSach = txtMaLoaiSach;
+                loaiSach.LoaiSach = txtLoaiSach;
+
+                db.LOAISACHes.InsertOnSubmit(loaiSach);
+                db.SubmitChanges();
+
+                var dsLoaiSach = db.LOAISACHes.Select(value => value);
+                dataGrid.DataSource = dsLoaiSach.ToList();
+            }
+            catch (Exception err)
+            {
+                Utils.MSG(err.Message);
+                return;
+            }
+        }
+
+        public void CapNhatLoaiSach(DataGridView dataGrid, string txtMaLoaiSach, string txtLoaiSach)
+        {
+            try
+            {
+                LOAISACH loaiSach = db.LOAISACHes.Single(value => value.MaLoaiSach.Equals(txtMaLoaiSach));
+                loaiSach.LoaiSach = txtLoaiSach;
+                db.SubmitChanges();
+
+                var dsLoaiSach = db.LOAISACHes.Select(value => value);
+                dataGrid.DataSource = dsLoaiSach.ToList();
+            }
+            catch (Exception err)
+            {
+                Utils.MSG(err.Message);
+                return;
+            }
+        }
+
+        public void SearchLoaiSACH(DataGridView dataGrid, string txtMaLoaiSach)
+        {
+            try
+            {
+                string[] where = { "MaLoaiSach", "LoaiSach" };
+                string[] whereValues = { txtMaLoaiSach, txtMaLoaiSach };
+                MSS.crud.Search(dataGrid, "LOAISACH", where, whereValues);
+            }
+            catch (Exception err)
+            {
+                Utils.MSG(err.Message);
+                return;
+            }
+        }
     }
 }

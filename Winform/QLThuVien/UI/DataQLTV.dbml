@@ -96,12 +96,6 @@
       <Column Name="TinhTrangMuon" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.LOAIDG" Member="LOAIDGs">
-    <Type Name="LOAIDG">
-      <Column Name="MaLoaiDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="LoaiDG" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.vDocGia" Member="vDocGias">
     <Type Name="vDocGia">
       <Column Name="MaDG" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
@@ -129,6 +123,18 @@
       <Column Name="NgayTra" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="SoNgayMuon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TienPhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAIDG" Member="LOAIDGs">
+    <Type Name="LOAIDG">
+      <Column Name="MaLoaiDG" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LoaiDG" Storage="_LoaiDG1" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAISACH" Member="LOAISACHes">
+    <Type Name="LOAISACH">
+      <Column Name="MaLoaiSach" Type="System.String" DbType="NChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LoaiSach" Type="System.String" DbType="NChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>

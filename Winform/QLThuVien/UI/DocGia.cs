@@ -23,6 +23,8 @@ namespace UI
         //Controller
         ControllerDocGia controller = new ControllerDocGia();
 
+        DataQLTVDataContext db = new DataQLTVDataContext();
+
         public DocGia()
         {
             InitializeComponent();
@@ -49,7 +51,9 @@ namespace UI
         private void DocGia_Load(object sender, EventArgs e)
         {
             controller.GetAllDocGia(dataDocGia);
+            controller.GetAllLoaiDG(dataLoaiDG);
             controller.GetAllComboBox(cbMaLoaiDG, "LOAIDG", "MaLoaiDG", "MaLoaiDG");
+            LoadMaLoaiDG();
         }
 
         private void dataDocGia_Click(object sender, EventArgs e)
@@ -245,6 +249,77 @@ namespace UI
                 radioButton2.Checked = true;
                 controller.GetAllComboBox(cbMaLoaiDG, "LOAIDG", "MaLoaiDG", "MaLoaiDG");
             }
+        }
+
+        private void dataLoaiDG_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Control[] controls = { txtMaLoaiDG, txtLoaiDG };
+            string[] fields = { "MaLoaiDG", "LoaiDG" };
+            MSS.crud.BindingsFields(dataLoaiDG, controls, fields);
+        }
+
+        private void btnRefreshLoaiDG_Click(object sender, EventArgs e)
+        {
+            Utils.ResetControls(groupBox5);
+            LoadMaLoaiDG();
+        }
+
+        public void LoadMaLoaiDG()
+        {
+            Random random = new Random();
+            string strRand = "ML" + DateTime.Now.ToString("HHmmss") + random.Next(10, 100);
+            txtMaLoaiDG.Text = strRand.Trim();
+        }
+
+        private void ThemLoaiDG_Click(object sender, EventArgs e)
+        {
+            if (txtLoaiDG.Text == "")
+            {
+                MessageBox.Show("LoaiDG Không Được Để Trống!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            controller.ThemLoaiDG(dataLoaiDG, txtMaLoaiDG.Text.Trim(), txtLoaiDG.Text.Trim());
+            MessageBox.Show("Thêm Loại DG Thành Công!", "Quản Lý Thư Viện",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Utils.ResetControls(groupBox5);
+            LoadMaLoaiDG();
+            controller.GetAllComboBox(cbMaLoaiDG, "LOAIDG", "MaLoaiDG", "MaLoaiDG");
+        }
+
+        private void btnUpdateLoaiDG_Click(object sender, EventArgs e)
+        {
+            if (txtLoaiDG.Text == "")
+            {
+                MessageBox.Show("LoaiDG Không Được Để Trống!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            controller.CapNhatLoaiDG(dataLoaiDG, txtMaLoaiDG.Text.Trim(), txtLoaiDG.Text.Trim());
+            MessageBox.Show("Cập Nhật Loại DG Thành Công!", "Quản Lý Thư Viện",
+            MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Utils.ResetControls(groupBox5);
+            LoadMaLoaiDG();
+            controller.GetAllComboBox(cbMaLoaiDG, "LOAIDG", "MaLoaiDG", "MaLoaiDG");
+        }
+
+        private void txtSearchLoaiDG_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                controller.SearchLoaiDG(dataLoaiDG, txtSearchLoaiDG.Text);
+            }
+            catch (Exception ex)
+            {
+                Utils.MSG(ex.Message);
+            }
+
+            //Tìm Kiếm Bằng Linq
+            //var dsSearchLoaiDG = db.LOAIDGs.Where(value => value.MaLoaiDG.Contains(txtSearchLoaiDG.Text)
+            //                        || value.LoaiDG.Contains(txtSearchLoaiDG.Text)).Select(value => value);
+            //dataLoaiDG.DataSource = dsSearchLoaiDG.ToList();
         }
     }
 }

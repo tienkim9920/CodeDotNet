@@ -48,6 +48,12 @@ namespace UI
     partial void InsertSACH(SACH instance);
     partial void UpdateSACH(SACH instance);
     partial void DeleteSACH(SACH instance);
+    partial void InsertLOAIDG(LOAIDG instance);
+    partial void UpdateLOAIDG(LOAIDG instance);
+    partial void DeleteLOAIDG(LOAIDG instance);
+    partial void InsertLOAISACH(LOAISACH instance);
+    partial void UpdateLOAISACH(LOAISACH instance);
+    partial void DeleteLOAISACH(LOAISACH instance);
     #endregion
 		
 		public DataQLTVDataContext() : 
@@ -160,14 +166,6 @@ namespace UI
 			}
 		}
 		
-		public System.Data.Linq.Table<LOAIDG> LOAIDGs
-		{
-			get
-			{
-				return this.GetTable<LOAIDG>();
-			}
-		}
-		
 		public System.Data.Linq.Table<vDocGia> vDocGias
 		{
 			get
@@ -181,6 +179,22 @@ namespace UI
 			get
 			{
 				return this.GetTable<vTraSach>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LOAIDG> LOAIDGs
+		{
+			get
+			{
+				return this.GetTable<LOAIDG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<LOAISACH> LOAISACHes
+		{
+			get
+			{
+				return this.GetTable<LOAISACH>();
 			}
 		}
 	}
@@ -1649,51 +1663,6 @@ namespace UI
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAIDG")]
-	public partial class LOAIDG
-	{
-		
-		private string _MaLoaiDG;
-		
-		private string _LoaiDG;
-		
-		public LOAIDG()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiDG", DbType="NChar(20) NOT NULL", CanBeNull=false)]
-		public string MaLoaiDG
-		{
-			get
-			{
-				return this._MaLoaiDG;
-			}
-			set
-			{
-				if ((this._MaLoaiDG != value))
-				{
-					this._MaLoaiDG = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiDG", DbType="NChar(30) NOT NULL", CanBeNull=false)]
-		public string LoaiDG
-		{
-			get
-			{
-				return this._LoaiDG;
-			}
-			set
-			{
-				if ((this._LoaiDG != value))
-				{
-					this._LoaiDG = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vDocGia")]
 	public partial class vDocGia
 	{
@@ -2086,6 +2055,178 @@ namespace UI
 				{
 					this._TienPhat = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAIDG")]
+	public partial class LOAIDG : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaLoaiDG;
+		
+		private string _LoaiDG1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaLoaiDGChanging(string value);
+    partial void OnMaLoaiDGChanged();
+    partial void OnLoaiDGChanging(string value);
+    partial void OnLoaiDGChanged();
+    #endregion
+		
+		public LOAIDG()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiDG", DbType="NChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaLoaiDG
+		{
+			get
+			{
+				return this._MaLoaiDG;
+			}
+			set
+			{
+				if ((this._MaLoaiDG != value))
+				{
+					this.OnMaLoaiDGChanging(value);
+					this.SendPropertyChanging();
+					this._MaLoaiDG = value;
+					this.SendPropertyChanged("MaLoaiDG");
+					this.OnMaLoaiDGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiDG1", DbType="NChar(30) NOT NULL", CanBeNull=false)]
+		public string LoaiDG
+		{
+			get
+			{
+				return this._LoaiDG1;
+			}
+			set
+			{
+				if ((this._LoaiDG1 != value))
+				{
+					this.OnLoaiDGChanging(value);
+					this.SendPropertyChanging();
+					this._LoaiDG1 = value;
+					this.SendPropertyChanged("LoaiDG");
+					this.OnLoaiDGChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAISACH")]
+	public partial class LOAISACH : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaLoaiSach;
+		
+		private string _LoaiSach;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaLoaiSachChanging(string value);
+    partial void OnMaLoaiSachChanged();
+    partial void OnLoaiSachChanging(string value);
+    partial void OnLoaiSachChanged();
+    #endregion
+		
+		public LOAISACH()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaLoaiSach", DbType="NChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaLoaiSach
+		{
+			get
+			{
+				return this._MaLoaiSach;
+			}
+			set
+			{
+				if ((this._MaLoaiSach != value))
+				{
+					this.OnMaLoaiSachChanging(value);
+					this.SendPropertyChanging();
+					this._MaLoaiSach = value;
+					this.SendPropertyChanged("MaLoaiSach");
+					this.OnMaLoaiSachChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LoaiSach", DbType="NChar(50) NOT NULL", CanBeNull=false)]
+		public string LoaiSach
+		{
+			get
+			{
+				return this._LoaiSach;
+			}
+			set
+			{
+				if ((this._LoaiSach != value))
+				{
+					this.OnLoaiSachChanging(value);
+					this.SendPropertyChanging();
+					this._LoaiSach = value;
+					this.SendPropertyChanged("LoaiSach");
+					this.OnLoaiSachChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
