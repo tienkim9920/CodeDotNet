@@ -72,28 +72,28 @@
             this.cbMaLoaiDG = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtMaLoaiDG = new System.Windows.Forms.TextBox();
-            this.dataLoaiDG = new System.Windows.Forms.DataGridView();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.txtLoaiDG = new System.Windows.Forms.TextBox();
-            this.ThemLoaiDG = new System.Windows.Forms.Button();
-            this.btnUpdateLoaiDG = new System.Windows.Forms.Button();
-            this.btnRefreshLoaiDG = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.txtSearchLoaiDG = new System.Windows.Forms.TextBox();
+            this.btnRefreshLoaiDG = new System.Windows.Forms.Button();
+            this.btnUpdateLoaiDG = new System.Windows.Forms.Button();
+            this.ThemLoaiDG = new System.Windows.Forms.Button();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtLoaiDG = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.dataLoaiDG = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtMaLoaiDG = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGia)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataLoaiDG)).BeginInit();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataLoaiDG)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -528,6 +528,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Enabled = false;
             this.radioButton1.Location = new System.Drawing.Point(260, 175);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(71, 29);
@@ -539,6 +540,7 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Checked = true;
+            this.radioButton2.Enabled = false;
             this.radioButton2.Location = new System.Drawing.Point(358, 175);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(75, 29);
@@ -588,6 +590,7 @@
             // cbMaLoaiDG
             // 
             this.cbMaLoaiDG.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaLoaiDG.Enabled = false;
             this.cbMaLoaiDG.FormattingEnabled = true;
             this.cbMaLoaiDG.Location = new System.Drawing.Point(486, 65);
             this.cbMaLoaiDG.Name = "cbMaLoaiDG";
@@ -656,138 +659,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Các Loại Độc Giả";
             // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label12.CausesValidation = false;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label12.Location = new System.Drawing.Point(40, 122);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(170, 4);
-            this.label12.TabIndex = 14;
-            // 
-            // txtMaLoaiDG
-            // 
-            this.txtMaLoaiDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtMaLoaiDG.Enabled = false;
-            this.txtMaLoaiDG.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaLoaiDG.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtMaLoaiDG.Location = new System.Drawing.Point(40, 90);
-            this.txtMaLoaiDG.Multiline = true;
-            this.txtMaLoaiDG.Name = "txtMaLoaiDG";
-            this.txtMaLoaiDG.Size = new System.Drawing.Size(171, 36);
-            this.txtMaLoaiDG.TabIndex = 0;
-            // 
-            // dataLoaiDG
-            // 
-            this.dataLoaiDG.AllowUserToAddRows = false;
-            this.dataLoaiDG.AllowUserToResizeColumns = false;
-            this.dataLoaiDG.AllowUserToResizeRows = false;
-            this.dataLoaiDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataLoaiDG.BackgroundColor = System.Drawing.Color.White;
-            this.dataLoaiDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataLoaiDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataLoaiDG.GridColor = System.Drawing.Color.RoyalBlue;
-            this.dataLoaiDG.Location = new System.Drawing.Point(6, 320);
-            this.dataLoaiDG.Name = "dataLoaiDG";
-            this.dataLoaiDG.ReadOnly = true;
-            this.dataLoaiDG.RowHeadersVisible = false;
-            this.dataLoaiDG.RowHeadersWidth = 51;
-            this.dataLoaiDG.RowTemplate.Height = 24;
-            this.dataLoaiDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataLoaiDG.Size = new System.Drawing.Size(467, 329);
-            this.dataLoaiDG.TabIndex = 15;
-            this.dataLoaiDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLoaiDG_CellClick);
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Source Sans Pro", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label23.Location = new System.Drawing.Point(36, 63);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(97, 24);
-            this.label23.TabIndex = 16;
-            this.label23.Text = "MaLoaiDG:";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Source Sans Pro", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label24.Location = new System.Drawing.Point(267, 63);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(73, 24);
-            this.label24.TabIndex = 19;
-            this.label24.Text = "LoaiDG:";
-            // 
-            // label25
-            // 
-            this.label25.BackColor = System.Drawing.Color.RoyalBlue;
-            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label25.CausesValidation = false;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label25.Location = new System.Drawing.Point(271, 122);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(170, 4);
-            this.label25.TabIndex = 18;
-            // 
-            // txtLoaiDG
-            // 
-            this.txtLoaiDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLoaiDG.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoaiDG.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtLoaiDG.Location = new System.Drawing.Point(271, 90);
-            this.txtLoaiDG.Multiline = true;
-            this.txtLoaiDG.Name = "txtLoaiDG";
-            this.txtLoaiDG.Size = new System.Drawing.Size(171, 36);
-            this.txtLoaiDG.TabIndex = 17;
-            // 
-            // ThemLoaiDG
-            // 
-            this.ThemLoaiDG.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ThemLoaiDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ThemLoaiDG.Font = new System.Drawing.Font("Ebrima", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThemLoaiDG.ForeColor = System.Drawing.Color.White;
-            this.ThemLoaiDG.Location = new System.Drawing.Point(322, 148);
-            this.ThemLoaiDG.Name = "ThemLoaiDG";
-            this.ThemLoaiDG.Size = new System.Drawing.Size(116, 46);
-            this.ThemLoaiDG.TabIndex = 20;
-            this.ThemLoaiDG.Text = "Thêm";
-            this.ThemLoaiDG.UseVisualStyleBackColor = false;
-            this.ThemLoaiDG.Click += new System.EventHandler(this.ThemLoaiDG_Click);
-            // 
-            // btnUpdateLoaiDG
-            // 
-            this.btnUpdateLoaiDG.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnUpdateLoaiDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateLoaiDG.Font = new System.Drawing.Font("Ebrima", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateLoaiDG.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateLoaiDG.Location = new System.Drawing.Point(182, 147);
-            this.btnUpdateLoaiDG.Name = "btnUpdateLoaiDG";
-            this.btnUpdateLoaiDG.Size = new System.Drawing.Size(116, 47);
-            this.btnUpdateLoaiDG.TabIndex = 21;
-            this.btnUpdateLoaiDG.Text = "Cập Nhật";
-            this.btnUpdateLoaiDG.UseVisualStyleBackColor = false;
-            this.btnUpdateLoaiDG.Click += new System.EventHandler(this.btnUpdateLoaiDG_Click);
-            // 
-            // btnRefreshLoaiDG
-            // 
-            this.btnRefreshLoaiDG.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnRefreshLoaiDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefreshLoaiDG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshLoaiDG.ForeColor = System.Drawing.Color.White;
-            this.btnRefreshLoaiDG.Location = new System.Drawing.Point(37, 147);
-            this.btnRefreshLoaiDG.Name = "btnRefreshLoaiDG";
-            this.btnRefreshLoaiDG.Size = new System.Drawing.Size(122, 45);
-            this.btnRefreshLoaiDG.TabIndex = 24;
-            this.btnRefreshLoaiDG.Text = "Làm Mới";
-            this.btnRefreshLoaiDG.UseVisualStyleBackColor = false;
-            this.btnRefreshLoaiDG.Click += new System.EventHandler(this.btnRefreshLoaiDG_Click);
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label26);
@@ -837,6 +708,138 @@
             this.txtSearchLoaiDG.TabIndex = 0;
             this.txtSearchLoaiDG.TextChanged += new System.EventHandler(this.txtSearchLoaiDG_TextChanged);
             // 
+            // btnRefreshLoaiDG
+            // 
+            this.btnRefreshLoaiDG.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnRefreshLoaiDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshLoaiDG.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshLoaiDG.ForeColor = System.Drawing.Color.White;
+            this.btnRefreshLoaiDG.Location = new System.Drawing.Point(37, 147);
+            this.btnRefreshLoaiDG.Name = "btnRefreshLoaiDG";
+            this.btnRefreshLoaiDG.Size = new System.Drawing.Size(122, 45);
+            this.btnRefreshLoaiDG.TabIndex = 24;
+            this.btnRefreshLoaiDG.Text = "Làm Mới";
+            this.btnRefreshLoaiDG.UseVisualStyleBackColor = false;
+            this.btnRefreshLoaiDG.Click += new System.EventHandler(this.btnRefreshLoaiDG_Click);
+            // 
+            // btnUpdateLoaiDG
+            // 
+            this.btnUpdateLoaiDG.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnUpdateLoaiDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdateLoaiDG.Font = new System.Drawing.Font("Ebrima", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateLoaiDG.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateLoaiDG.Location = new System.Drawing.Point(182, 147);
+            this.btnUpdateLoaiDG.Name = "btnUpdateLoaiDG";
+            this.btnUpdateLoaiDG.Size = new System.Drawing.Size(116, 47);
+            this.btnUpdateLoaiDG.TabIndex = 21;
+            this.btnUpdateLoaiDG.Text = "Cập Nhật";
+            this.btnUpdateLoaiDG.UseVisualStyleBackColor = false;
+            this.btnUpdateLoaiDG.Click += new System.EventHandler(this.btnUpdateLoaiDG_Click);
+            // 
+            // ThemLoaiDG
+            // 
+            this.ThemLoaiDG.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ThemLoaiDG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ThemLoaiDG.Font = new System.Drawing.Font("Ebrima", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThemLoaiDG.ForeColor = System.Drawing.Color.White;
+            this.ThemLoaiDG.Location = new System.Drawing.Point(322, 148);
+            this.ThemLoaiDG.Name = "ThemLoaiDG";
+            this.ThemLoaiDG.Size = new System.Drawing.Size(116, 46);
+            this.ThemLoaiDG.TabIndex = 20;
+            this.ThemLoaiDG.Text = "Thêm";
+            this.ThemLoaiDG.UseVisualStyleBackColor = false;
+            this.ThemLoaiDG.Click += new System.EventHandler(this.ThemLoaiDG_Click);
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Source Sans Pro", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label24.Location = new System.Drawing.Point(267, 63);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(73, 24);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "LoaiDG:";
+            // 
+            // label25
+            // 
+            this.label25.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label25.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label25.CausesValidation = false;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label25.Location = new System.Drawing.Point(271, 122);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(170, 4);
+            this.label25.TabIndex = 18;
+            // 
+            // txtLoaiDG
+            // 
+            this.txtLoaiDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtLoaiDG.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLoaiDG.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtLoaiDG.Location = new System.Drawing.Point(271, 90);
+            this.txtLoaiDG.Multiline = true;
+            this.txtLoaiDG.Name = "txtLoaiDG";
+            this.txtLoaiDG.Size = new System.Drawing.Size(171, 36);
+            this.txtLoaiDG.TabIndex = 17;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Source Sans Pro", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label23.Location = new System.Drawing.Point(36, 63);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(97, 24);
+            this.label23.TabIndex = 16;
+            this.label23.Text = "MaLoaiDG:";
+            // 
+            // dataLoaiDG
+            // 
+            this.dataLoaiDG.AllowUserToAddRows = false;
+            this.dataLoaiDG.AllowUserToResizeColumns = false;
+            this.dataLoaiDG.AllowUserToResizeRows = false;
+            this.dataLoaiDG.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataLoaiDG.BackgroundColor = System.Drawing.Color.White;
+            this.dataLoaiDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataLoaiDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataLoaiDG.GridColor = System.Drawing.Color.RoyalBlue;
+            this.dataLoaiDG.Location = new System.Drawing.Point(6, 320);
+            this.dataLoaiDG.Name = "dataLoaiDG";
+            this.dataLoaiDG.ReadOnly = true;
+            this.dataLoaiDG.RowHeadersVisible = false;
+            this.dataLoaiDG.RowHeadersWidth = 51;
+            this.dataLoaiDG.RowTemplate.Height = 24;
+            this.dataLoaiDG.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataLoaiDG.Size = new System.Drawing.Size(467, 329);
+            this.dataLoaiDG.TabIndex = 15;
+            this.dataLoaiDG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataLoaiDG_CellClick);
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.RoyalBlue;
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label12.CausesValidation = false;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label12.Location = new System.Drawing.Point(40, 122);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(170, 4);
+            this.label12.TabIndex = 14;
+            // 
+            // txtMaLoaiDG
+            // 
+            this.txtMaLoaiDG.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaLoaiDG.Enabled = false;
+            this.txtMaLoaiDG.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaLoaiDG.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txtMaLoaiDG.Location = new System.Drawing.Point(40, 90);
+            this.txtMaLoaiDG.Multiline = true;
+            this.txtMaLoaiDG.Name = "txtMaLoaiDG";
+            this.txtMaLoaiDG.Size = new System.Drawing.Size(171, 36);
+            this.txtMaLoaiDG.TabIndex = 0;
+            // 
             // DocGia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -867,9 +870,9 @@
             this.groupBox3.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataLoaiDG)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataLoaiDG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

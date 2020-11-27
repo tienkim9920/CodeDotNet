@@ -14,6 +14,8 @@ namespace UI
 {
     public partial class Sach : Form
     {
+        DataQLTVDataContext db = new DataQLTVDataContext();
+
         ControllerSach controllerSach = new ControllerSach();
 
         public static bool flag = true;
@@ -180,6 +182,15 @@ namespace UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            SACH sach = db.SACHes.Single(value => value.MaSach.Equals(txtMaSach.Text));
+
+            if (sach.TinhTrangMuon == true)
+            {
+                MessageBox.Show("Không Thể Xóa. Bởi Vì Sách Này Đang Có Người Mượn!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (controllerSach.Delete(dataSach, txtMaSach.Text))
             {
                 MessageBox.Show("Bạn Đã Xóa Thành Công!", "Quản Lý Thư Viện",
@@ -271,8 +282,8 @@ namespace UI
 
         private void dataLoaiSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Control[] controls = { txtMaLoaiSach, txtLoaiSach };
-            string[] fields = { "MaLoaiSach", "LoaiSach" };
+            Control[] controls = { txtMaLoaiSach, txtLoaiSach, cbMaLoaiSach };
+            string[] fields = { "MaLoaiSach", "LoaiSach", "MaLoaiSach" };
             MSS.crud.BindingsFields(dataLoaiSach, controls, fields);
         }
 

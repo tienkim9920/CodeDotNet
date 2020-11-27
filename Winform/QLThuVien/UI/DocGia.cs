@@ -122,6 +122,15 @@ namespace UI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            DOCGIA docGia = db.DOCGIAs.Single(value => value.MaDG.Equals(txtMaDG.Text));
+
+            if (docGia.SoSachMuon > 0)
+            {
+                MessageBox.Show("Không Thể Xóa. Bởi Vì Độc Giả Này Chưa Trả Sách!", "Quản Lý Thư Viện",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (controller.Delete(dataDocGia, txtMaDG.Text))
             {
                 MessageBox.Show("Bạn Đã Xóa Thành Công!", "Quản Lý Thư Viện",
@@ -253,8 +262,8 @@ namespace UI
 
         private void dataLoaiDG_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Control[] controls = { txtMaLoaiDG, txtLoaiDG };
-            string[] fields = { "MaLoaiDG", "LoaiDG" };
+            Control[] controls = { txtMaLoaiDG, txtLoaiDG, cbMaLoaiDG };
+            string[] fields = { "MaLoaiDG", "LoaiDG", "MaLoaiDG" };
             MSS.crud.BindingsFields(dataLoaiDG, controls, fields);
         }
 
